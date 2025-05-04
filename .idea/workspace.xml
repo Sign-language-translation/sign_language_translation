@@ -3013,42 +3013,42 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.3d_cnn.executor": "Run",
-    "Python.3d_cnn_rnn.executor": "Run",
-    "Python.app.executor": "Run",
-    "Python.classification.executor": "Run",
-    "Python.concatenate_videos.executor": "Run",
-    "Python.create_database.executor": "Run",
-    "Python.generate_motion_data.executor": "Run",
-    "Python.recreate_and_rerun_model.executor": "Run",
-    "Python.split_sentence.executor": "Debug",
-    "Python.test_mediapipe.executor": "Debug",
-    "Python.test_sentence_translation.executor": "Debug",
-    "Python.test_single_word_translation.executor": "Run",
-    "Python.video_augmentation.executor": "Run",
-    "Python.video_edit.executor": "Run",
-    "Python.yanoos_tests.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "recovered__files",
-    "last_opened_file_path": "C:/Users/yaelm/Documents/4th_year_project/sign_language_translation/models",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.3d_cnn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.3d_cnn_rnn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classification.executor&quot;: &quot;Run&quot;,
+    &quot;Python.concatenate_videos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.generate_motion_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recreate_and_rerun_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split_sentence.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_mediapipe.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_sentence_translation.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_single_word_translation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_augmentation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_edit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.yanoos_tests.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;recovered__files&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yaelm/Documents/4th_year_project/sign_language_translation/models&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\models" />
