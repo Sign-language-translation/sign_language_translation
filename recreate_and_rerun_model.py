@@ -15,7 +15,7 @@ MODELS_FOLDER = 'models'
 # augmented_folder = "resources/generated_motion_data"
 
 # os.makedirs(augmented_folder, exist_ok=True)
-AMOUNT_OF_VARIATIONS = 30
+AMOUNT_OF_VARIATIONS = 40
 
 def create_original_jsons(input_folder_path_original_videos, output_folder_path_motion_data):
     # Ensure the folder exists

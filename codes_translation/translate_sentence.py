@@ -12,11 +12,9 @@ import numpy as np
 load_dotenv()
 
 # Constants for average word duration
-MIN_WINDOW_SEC = 1.2
+MIN_WINDOW_SEC = 0.8
 MAX_WINDOW_SEC = 2.5
 STEP_SIZE_SEC = 0.5
-MODEL_PATH = '../models/3d_rnn_cnn_on_30_vpw.keras'
-LABEL_ENCODER_PATH = '../models/label_encoder_3d_rnn_cnn_30_vpw.pkl'
 AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
 
 def segment_video_with_opencv(duration, output_folder, cap, fps):
@@ -96,7 +94,7 @@ def process_segments(video_path):
     return predictions, duration
 """
 
-def process_segments_with_threads(video_path):
+def process_segments_with_threads(video_path, model_path, label_encoder_path):
     temp_folder = tempfile.mkdtemp()
     cap = cv2.VideoCapture(video_path)
     fps = cap.get(cv2.CAP_PROP_FPS)
@@ -105,8 +103,8 @@ def process_segments_with_threads(video_path):
 
     segments = segment_video_with_opencv(duration, temp_folder, cap, fps)
 
-    model_filename = os.path.join(os.path.dirname(__file__), MODEL_PATH)
-    label_encoder_path = os.path.join(os.path.dirname(__file__), LABEL_ENCODER_PATH)
+    model_filename = os.path.join(os.path.dirname(__file__), model_path)
+    label_encoder_path = os.path.join(os.path.dirname(__file__), label_encoder_path)
     label_encoder = load_label_mapping(label_encoder_path)
 
     predictions = []  # <- list to store all results
@@ -241,8 +239,8 @@ def summarize_predictions_gpt(predictions, video_duration):
 
     return final_answer
 
-def translate_video_to_text(video_path):
-    predictions, video_duration = process_segments_with_threads(video_path)
+def translate_video_to_text(video_path, model_path, label_encoder_path):
+    predictions, video_duration = process_segments_with_threads(video_path, model_path, label_encoder_path)
 
     translation_text = summarize_predictions_gpt(predictions, video_duration)
 
