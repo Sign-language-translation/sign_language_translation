@@ -1,0 +1,22 @@
+
+=== Test Summary ===
+
+Test 1/3 — I_hungry_angry_yanos_0_75_speed.mp4
+Time taken: 52.96 seconds
+❌ Test failed
+Expected: ['I', 'hungry', 'angry']
+Received: ['far', 'hungry', 'angry']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 2/3 — I_hungry_saturday_yanoos_0_75_speed.mp4
+Time taken: 46.41 seconds
+✅ Test passed
+Result: I hungry saturday
+✔️ Success: 3/3 words correct (100.0%)
+
+Test 3/3 — I_walk_far_yanos_0_75_speed.mp4
+Time taken: 52.20 seconds
+❌ Test failed
+Expected: ['I', 'walk', 'far']
+Received: ['I']
+✔️ Success: 1/3 words correct (33.3%)

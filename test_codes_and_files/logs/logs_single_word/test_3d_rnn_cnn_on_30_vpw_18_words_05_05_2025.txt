@@ -1,0 +1,120 @@
+
+=== Single Word Test Summary ===
+
+Test 1/18 — angry_1.mp4
+Time taken: 3.18 seconds
+✅ Test passed
+
+=== Conclusion: 1/18 tests passed (5.6%) ===
+
+Test 2/18 — angry_4.mp4
+Time taken: 2.88 seconds
+✅ Test passed
+
+=== Conclusion: 2/18 tests passed (11.1%) ===
+
+Test 3/18 — come_2.mp4
+Time taken: 1.30 seconds
+❌ Test failed
+Expected: come
+Received: far
+
+=== Conclusion: 2/18 tests passed (11.1%) ===
+
+Test 4/18 — far_3.mp4
+Time taken: 3.76 seconds
+✅ Test passed
+
+=== Conclusion: 3/18 tests passed (16.7%) ===
+
+Test 5/18 — far_6.mp4
+Time taken: 2.87 seconds
+✅ Test passed
+
+=== Conclusion: 4/18 tests passed (22.2%) ===
+
+Test 6/18 — house_4.mp4
+Time taken: 1.63 seconds
+❌ Test failed
+Expected: house
+Received: far
+
+=== Conclusion: 4/18 tests passed (22.2%) ===
+
+Test 7/18 — hungry_5.mp4
+Time taken: 2.05 seconds
+✅ Test passed
+
+=== Conclusion: 5/18 tests passed (27.8%) ===
+
+Test 8/18 — I_6.mp4
+Time taken: 2.50 seconds
+✅ Test passed
+
+=== Conclusion: 6/18 tests passed (33.3%) ===
+
+Test 9/18 — no_7.mp4
+Time taken: 2.26 seconds
+✅ Test passed
+
+=== Conclusion: 7/18 tests passed (38.9%) ===
+
+Test 10/18 — rest_5.mp4
+Time taken: 1.51 seconds
+❌ Test failed
+Expected: rest
+Received: far
+
+=== Conclusion: 7/18 tests passed (38.9%) ===
+
+Test 11/18 — saturday_5.mp4
+Time taken: 2.95 seconds
+❌ Test failed
+Expected: saturday
+Received: far
+
+=== Conclusion: 7/18 tests passed (38.9%) ===
+
+Test 12/18 — saturday_8.mp4
+Time taken: 2.80 seconds
+✅ Test passed
+
+=== Conclusion: 8/18 tests passed (44.4%) ===
+
+Test 13/18 — walk_7.mp4
+Time taken: 2.22 seconds
+✅ Test passed
+
+=== Conclusion: 9/18 tests passed (50.0%) ===
+
+Test 14/18 — welcome_6.mp4
+Time taken: 2.74 seconds
+✅ Test passed
+
+=== Conclusion: 10/18 tests passed (55.6%) ===
+
+Test 15/18 — when_6.mp4
+Time taken: 1.44 seconds
+✅ Test passed
+
+=== Conclusion: 11/18 tests passed (61.1%) ===
+
+Test 16/18 — why_6.mp4
+Time taken: 1.95 seconds
+❌ Test failed
+Expected: why
+Received: far
+
+=== Conclusion: 11/18 tests passed (61.1%) ===
+
+Test 17/18 — you_2.mp4
+Time taken: 1.76 seconds
+✅ Test passed
+
+=== Conclusion: 12/18 tests passed (66.7%) ===
+
+Test 18/18 — you_3.mp4
+Time taken: 2.39 seconds
+✅ Test passed
+
+=== Conclusion: 13/18 tests passed (72.2%) ===
