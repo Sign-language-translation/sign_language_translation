@@ -11,11 +11,7 @@ GENERATED_MOTION_DATA_FOLDER_PATH = "resources/generated_motion_data"
 ORIGINAL_VIDEOS_DATA_FOLDER_PATH = "resources/sign_language_videos"
 MODELS_FOLDER = 'models'
 
-# original_folder = "resources/motion_data"
-# augmented_folder = "resources/generated_motion_data"
-
-# os.makedirs(augmented_folder, exist_ok=True)
-AMOUNT_OF_VARIATIONS = 40
+AMOUNT_OF_VARIATIONS = 15
 
 def create_original_jsons(input_folder_path_original_videos, output_folder_path_motion_data):
     # Ensure the folder exists
