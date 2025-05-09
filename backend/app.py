@@ -1,9 +1,11 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import sys
 import os
 import uuid
 from werkzeug.utils import secure_filename
+from moviepy.editor import VideoFileClip, concatenate_videoclips
+from flask import url_for
 
 # Add the parent directory of the backend folder to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
@@ -17,6 +19,10 @@ CORS(app)  # Enable CORS for all routes
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the upload folder exists
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+# Define the folder where the word videos are stored
+VIDEO_FOLDER = 'videos'  
+
 
 # Allowed file extensions
 ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
@@ -67,6 +73,72 @@ def translate_sign_language(data_frames):
         return f"File not found: {e}"
     except Exception as e:
         return f"An error occurred: {e}"
+    
+@app.route('/generate_video', methods=['POST'])
+def generate_video():
+    try:
+        # Get the text from the request
+        data = request.get_json()
+        print("📥 Received data:", data)
+        text = data.get('text', '')
+        print("✏️ Text to convert:", text)
+
+        if not text.strip():
+            return jsonify({"error": "No text provided"}), 400
+
+        # Format filename from text
+        safe_filename = text.strip().lower().replace(" ", "_") + ".mp4"
+        output_folder = os.path.join("static", "generated_videos")
+        os.makedirs(output_folder, exist_ok=True)
+        output_path = os.path.join(output_folder, safe_filename)
+
+        # If video already exists, return it
+        if os.path.exists(output_path):
+            print(f"📦 Found existing video for: {text}")
+            video_url = url_for('static',filename=f"generated_videos/{safe_filename}", _external=True)
+            return jsonify({ "video_url": video_url })
+
+        # Split the text into words
+        words = text.strip().lower().split()
+
+        # Prepare a list to store video clips
+        video_clips = []
+
+        for word in words:
+            video_path = os.path.join(VIDEO_FOLDER, f"{word}.mp4")
+            
+            # Check if the video file exists
+            if os.path.exists(video_path):
+                clip = VideoFileClip(video_path)
+                video_clips.append(clip)
+            else:
+                print(f"⚠️ Warning: Video for word '{word}' not found at {video_path}")
+
+        if not video_clips:
+            return jsonify({
+            "error": "No translation found for the given text.",
+            "missing_words": words
+        }), 400
+
+        # Concatenate all video clips
+        final_clip = concatenate_videoclips(video_clips, method="compose")
+
+        # Write the final video
+        final_clip.write_videofile(output_path, codec='libx264', audio_codec='aac')
+
+        # Close clips
+        for clip in video_clips:
+            clip.close()
+        final_clip.close()
+
+        # return send_file(output_path, as_attachment=True)
+        video_url = url_for('static', filename=f"generated_videos/{safe_filename}", _external=True)
+
+        return jsonify({ "video_url": video_url })
+
+    except Exception as e:
+        print("❌ Error during video generation:", e)
+        return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)

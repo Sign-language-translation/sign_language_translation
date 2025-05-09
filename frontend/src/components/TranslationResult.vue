@@ -19,7 +19,7 @@
   
   <style scoped>
   .translation-result {
-    max-width: 600px;
+    max-width: 300px;
     margin: 10px auto;
   }
 
@@ -38,13 +38,12 @@
   }
   
   .translation-result h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: black;
-    margin-top: 40px;
   }
   
   .translation-result p {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5;
     color: #333;
     word-wrap: break-word;

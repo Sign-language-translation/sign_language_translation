@@ -1,5 +1,116 @@
 <template>
   <div id="app">
+    <AppNavbar /> 
+    <router-view />
+  </div>
+</template>
+
+<script>
+import AppNavbar from './components/AppNavbar.vue';
+
+export default {
+  name: 'App',
+  components: {
+    AppNavbar,
+  },
+};
+</script>
+
+
+
+<!-- 
+<template>
+  <div id="app">
+    <router-view />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App'
+}
+</script> -->
+
+<!-- <template>
+  <div id="app">
+    <h1 style="color: green;">✅ Vue is rendering with router</h1>
+    <router-view />
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'App',
+  mounted() {
+    console.log("✅ App.vue mounted");
+  }
+}
+</script> -->
+
+
+<!-- <style scoped>
+#app {
+  /* text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  position: relative;
+  margin: 0;
+  transition: min-height 0.6s ease-in-out; */
+
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding-top: 70px; */
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  padding-top: 70px; /* ensure space for navbar */
+}
+</style> -->
+
+<style scoped>
+
+#app {
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+  position: relative; 
+  min-height: 80vh; 
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: min-height 0.6s ease-in-out; 
+  padding-top: 50px; 
+}
+
+
+#app::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 120vh; 
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('@/assets/sign1.jpg') left center no-repeat, 
+    url('@/assets/sign2.jpg') center center no-repeat, 
+    url('@/assets/sign3.jpg') right center no-repeat;
+  background-size: 33.33vw 100vh;
+  z-index: -1; 
+  /* background-size: cover; */
+  background-attachment: fixed;
+}
+
+ 
+</style>
+
+<!-- <template>
+  <div id="app">
     <div class="content">
       <h1>Sign Language Video Translator</h1>
       <video-upload 
@@ -184,4 +295,4 @@ button:disabled {
   }
 }
 
-</style>
+</style> -->
