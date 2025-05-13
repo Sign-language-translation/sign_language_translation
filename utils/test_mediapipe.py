@@ -84,13 +84,32 @@ def extract_motion_data(video_name, folder_name=video_folder):
 
     return trimmed_data
 
-def motion_data_to_json(frames_data, video_name, folder_name):
+def motion_data_to_json(frames_data, video_name, folder_name, log_folder_path=None):
+    # Ensure log folder exists
+    if log_folder_path is None:
+        log_folder_path = os.getcwd()  # Set log folder path to the current working directory
+
+    os.makedirs(log_folder_path, exist_ok=True)
+
+    # Path to log file
+    log_path = os.path.join(log_folder_path, "defective_json_log.txt")
+
+    # Check if motion data is empty
+    if not frames_data:
+        # Append the defective video name to the log file
+        with open(log_path, "a") as log_file:
+            log_file.write(video_name + ".json\n")
+
+        print(f"Empty motion data for '{video_name}', logged to {log_path}")
+        return  # Skip saving the empty JSON file
+
     # Save motion data to a file
-    json_path = folder_name + "/" + video_name + ".json"
+    json_path = os.path.join(folder_name, video_name + ".json")
     with open(json_path, "w") as f:
         json.dump(frames_data, f)
 
     print(f"Motion data saved to {json_path}")
+
 
 def visualize_motion_data(video_name, json_folder):
     """Visualize motion data from a JSON file."""
