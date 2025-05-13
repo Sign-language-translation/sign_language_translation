@@ -48,11 +48,11 @@ def concatenate_videos(video_names, output_name):
         return
 
     # Save normal speed video
-    out_normal = cv2.VideoWriter(output_path, fourcc, fps, first_frame_size)
-    for frame in all_frames:
-        out_normal.write(frame)
-    out_normal.release()
-    print(f"Regular speed video saved to: {output_path}")
+    # out_normal = cv2.VideoWriter(output_path, fourcc, fps, first_frame_size)
+    # for frame in all_frames:
+    #     out_normal.write(frame)
+    # out_normal.release()
+    # print(f"Regular speed video saved to: {output_path}")
 
     # Save 0.75x speed video (lower FPS)
     slow_fps = fps * 0.75
@@ -64,9 +64,23 @@ def concatenate_videos(video_names, output_name):
 
 
 def main():
-    video_list = ["I_1", "hungry_1", "saturday_1"]
-    output_video_name = "I_hungry_saturday_yanoos"
-    concatenate_videos(video_list, output_video_name)
+    # video_list = ["I_1", "hungry_1", "saturday_1"]
+    # output_video_name = "I_hungry_saturday_yanoos"
+    # concatenate_videos(video_list, output_video_name)
+
+    video_sets = [
+        (["I_6", "walk_7", "far_6"], "I_walk_far_test"),
+        (["when_3", "you_3", "come_7"], "when_you_come_test"),
+        (["you_3", "welcome_6"], "you_welcome_test"),
+        (["when_6", "you_3", "hungry_5"], "when_you_hungry_test"),
+        (["I_5", "no_7", "walk_8"], "I_no_walk_test"),
+        (["you_2", "walk_7", "far_6", "saturday_8"], "you_walk_far_saturday_test"),
+        (["I_6", "no_7", "angry_4"], "I_no_angry_test"),
+        (["I_5", "no_7", "far_6"], "I_no_far_test"),
+    ]
+
+    for video_list, output_video_name in video_sets:
+        concatenate_videos(video_list, output_video_name)
 
 
 main()

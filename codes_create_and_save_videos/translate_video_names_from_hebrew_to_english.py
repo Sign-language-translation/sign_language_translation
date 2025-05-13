@@ -2,20 +2,33 @@ import os
 import shutil
 
 hebrew_to_english = {
-    "אתה": "you",
-    "אני": "I",
-    "בית": "house",
-    "ברוך הבא": "welcome",
-    "יום שבת": "Saturday",
-    "למה": "why",
-    "לבוא": "to_come",
-    "ללכת": "to_walk",
-    "לא": "no",
+    "שלום": "hello",
+    "תודה": "thanks",
+    "צריך": "need",
+    "עכשיו": "now",
     "מתי": "when",
-    "מנוחה": "rest",
-    "רעב": "hungry",
-    "רחוק": "far",
-    "עצבני": "angry",
+    "למה": "why",
+    "תור": "appointment",
+    "לקבוע": "schedule",
+    "להגיע": "arrive",
+    "תחנה": "station",
+    "אוטובוס": "bus",
+    "טלפון": "phone",
+    "מקום": "place",
+    "לעזור": "help",
+    "שם": "name",
+    "לא": "no",
+    "ללכת": "go",
+    "לבוא": "come",
+    "אני": "I",
+    "אתה": "you",
+    "בית": "home",
+    "כרטיס": "ticket",
+    "אחר כך": "later",
+    "רופא": "doctor",
+    "תעודת זהות": "idCard",
+    "אמבולנס": "ambulance",
+    "קופת חולים": "clinic"
 }
 
 def rename_and_copy_videos(source_folder, target_folder, name_mapping):
@@ -44,5 +57,5 @@ def rename_and_copy_videos(source_folder, target_folder, name_mapping):
 # Example usage
 if __name__ == "__main__":
     source = r"C:\Users\yaelm\Downloads\סרטוני מילים"
-    target = r"C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\test_vid\new_words_20_04"
+    target = r"C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\resources\sign_language_videos"
     rename_and_copy_videos(source, target, hebrew_to_english)

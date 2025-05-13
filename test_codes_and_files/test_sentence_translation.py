@@ -6,23 +6,58 @@ from test_single_word_translation import log, create_log_file
 
 VIDEOS_FOLDER = "sentence_videos/"
 LOG_SENTENCE_FOLDER = 'logs/logs_sentence/'
-AMOUNT_OF_VARIATIONS = 30
+AMOUNT_OF_VARIATIONS = 10
 MODEL_FILE_PATH = f'../models/3d_rnn_cnn_on_{AMOUNT_OF_VARIATIONS}_vpw.keras'
 LABEL_ENCODER_FILE_PATH = f'../models/label_encoder_3d_rnn_cnn_{AMOUNT_OF_VARIATIONS}_vpw.pkl'
 
 def test_split_a_sentence(enable_logging=True):
+    # test_cases = [
+    #     {
+    #         "input_video": "I_hungry_angry_yanos_0_75_speed.mp4",
+    #         "expected_result": ['I', 'hungry', 'angry']
+    #     },
+    #     {
+    #         "input_video": "I_hungry_saturday_yanoos_0_75_speed.mp4",
+    #         "expected_result": ['I', 'hungry', 'saturday']
+    #     },
+    #     {
+    #         "input_video": "I_walk_far_yanos_0_75_speed.mp4",
+    #         "expected_result": ['I', 'walk', 'far']
+    #     }
+    # ]
+
     test_cases = [
         {
-            "input_video": "I_hungry_angry_yanos_0_75_speed.mp4",
-            "expected_result": ['I', 'hungry', 'angry']
-        },
-        {
-            "input_video": "I_hungry_saturday_yanoos_0_75_speed.mp4",
-            "expected_result": ['I', 'hungry', 'saturday']
-        },
-        {
-            "input_video": "I_walk_far_yanos_0_75_speed.mp4",
+            "input_video": "I_walk_far_test_0_75_speed.mp4",
             "expected_result": ['I', 'walk', 'far']
+        },
+        {
+            "input_video": "when_you_come_test_0_75_speed.mp4",
+            "expected_result": ['when', 'you', 'come']
+        },
+        {
+            "input_video": "you_welcome_test_0_75_speed.mp4",
+            "expected_result": ['you', 'welcome']
+        },
+        {
+            "input_video": "when_you_hungry_test_0_75_speed.mp4",
+            "expected_result": ['when', 'you', 'hungry']
+        },
+        {
+            "input_video": "I_no_walk_test_0_75_speed.mp4",
+            "expected_result": ['I', 'no', 'walk']
+        },
+        {
+            "input_video": "you_walk_far_saturday_test_0_75_speed.mp4",
+            "expected_result": ['you', 'walk', 'far', 'saturday']
+        },
+        {
+            "input_video": "I_no_angry_test_0_75_speed.mp4",
+            "expected_result": ['I', 'no', 'angry']
+        },
+        {
+            "input_video": "I_no_far_test_0_75_speed.mp4",
+            "expected_result": ['I', 'no', 'far']
         }
     ]
 
