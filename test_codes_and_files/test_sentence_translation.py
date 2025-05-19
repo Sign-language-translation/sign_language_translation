@@ -7,57 +7,118 @@ from test_single_word_translation import log, create_log_file
 VIDEOS_FOLDER = "sentence_videos/"
 LOG_SENTENCE_FOLDER = 'logs/logs_sentence/'
 AMOUNT_OF_VARIATIONS = 10
-MODEL_FILE_PATH = f'../models/3d_rnn_cnn_on_{AMOUNT_OF_VARIATIONS}_vpw.keras'
-LABEL_ENCODER_FILE_PATH = f'../models/label_encoder_3d_rnn_cnn_{AMOUNT_OF_VARIATIONS}_vpw.pkl'
+# MODEL_FILE_PATH = f'../models/3d_rnn_cnn_on_{AMOUNT_OF_VARIATIONS}_vpw.keras'
+# LABEL_ENCODER_FILE_PATH = f'../models/label_encoder_3d_rnn_cnn_{AMOUNT_OF_VARIATIONS}_vpw.pkl'
+MODEL_FILE_PATH = '..\\models\\attn-4_666_vpw.keras'
+LABEL_ENCODER_FILE_PATH = '..\\models\\label_encoder_attn-4_666_vpw.pkl'
 
 def test_split_a_sentence(enable_logging=True):
-    # test_cases = [
-    #     {
-    #         "input_video": "I_hungry_angry_yanos_0_75_speed.mp4",
-    #         "expected_result": ['I', 'hungry', 'angry']
-    #     },
-    #     {
-    #         "input_video": "I_hungry_saturday_yanoos_0_75_speed.mp4",
-    #         "expected_result": ['I', 'hungry', 'saturday']
-    #     },
-    #     {
-    #         "input_video": "I_walk_far_yanos_0_75_speed.mp4",
-    #         "expected_result": ['I', 'walk', 'far']
-    #     }
-    # ]
 
     test_cases = [
         {
-            "input_video": "I_walk_far_test_0_75_speed.mp4",
-            "expected_result": ['I', 'walk', 'far']
+            "input_video": "I_arrive_clinic_later_yanoos_2.mp4",
+            "expected_result": ["I", "arrive", "clinic", "later"],
+            "hebrew_translation": "אני מגיע לקופת חולים אחר כך"
         },
         {
-            "input_video": "when_you_come_test_0_75_speed.mp4",
-            "expected_result": ['when', 'you', 'come']
+            "input_video": "I_arrive_clinic_later_yanoos_1.mp4",
+            "expected_result": ["I", "arrive", "clinic", "later"],
+            "hebrew_translation": "אני מגיע לקופת חולים אחר כך"
         },
         {
-            "input_video": "you_welcome_test_0_75_speed.mp4",
-            "expected_result": ['you', 'welcome']
+            "input_video": "why_I_need_phone_yanoos_2.mp4",
+            "expected_result": ["why", "I", "need", "phone"],
+            "hebrew_translation": "למה אני צריך טלפון"
         },
         {
-            "input_video": "when_you_hungry_test_0_75_speed.mp4",
-            "expected_result": ['when', 'you', 'hungry']
+            "input_video": "why_I_need_phone_yanoos_1.mp4",
+            "expected_result": ["why", "I", "need", "phone"],
+            "hebrew_translation": "למה אני צריך טלפון"
         },
         {
-            "input_video": "I_no_walk_test_0_75_speed.mp4",
-            "expected_result": ['I', 'no', 'walk']
+            "input_video": "when_schedule_appointment_yanoos_2.mp4",
+            "expected_result": ["when", "schedule", "appointment"],
+            "hebrew_translation": "מתי לקבוע תור"
         },
         {
-            "input_video": "you_walk_far_saturday_test_0_75_speed.mp4",
-            "expected_result": ['you', 'walk', 'far', 'saturday']
+            "input_video": "when_schedule_appointment_yanoos_1.mp4",
+            "expected_result": ["when", "schedule", "appointment"],
+            "hebrew_translation": "מתי לקבוע תור"
         },
         {
-            "input_video": "I_no_angry_test_0_75_speed.mp4",
-            "expected_result": ['I', 'no', 'angry']
+            "input_video": "thanks_I_no_need_ticket_yanoos_2.mp4",
+            "expected_result": ["thanks", "I", "no", "need", "ticket"],
+            "hebrew_translation": "תודה אני לא צריך כרטיס"
         },
         {
-            "input_video": "I_no_far_test_0_75_speed.mp4",
-            "expected_result": ['I', 'no', 'far']
+            "input_video": "thanks_I_no_need_ticket_yanoos_1.mp4",
+            "expected_result": ["thanks", "I", "no", "need", "ticket"],
+            "hebrew_translation": "תודה אני לא צריך כרטיס"
+        },
+        {
+            "input_video": "hello_I_need_doctor_yanoos_1.mp4",
+            "expected_result": ["hello", "I", "need", "doctor"],
+            "hebrew_translation": "שלום אני צריך רופא"
+        },
+        {
+            "input_video": "I_go_station_bus_yanoos_2.mp4",
+            "expected_result": ["I", "go", "station", "bus"],
+            "hebrew_translation": "אני הולך לתחנת אוטובוס"
+        },
+        {
+            "input_video": "I_go_station_bus_yanoos_1.mp4",
+            "expected_result": ["I", "go", "station", "bus"],
+            "hebrew_translation": "אני הולך לתחנת אוטובוס"
+        },
+        {
+            "input_video": "when_come_ambulance_yanoos_2.mp4",
+            "expected_result": ["when", "come", "ambulance"],
+            "hebrew_translation": "מתי יגיע האמבולנס"
+        },
+        {
+            "input_video": "when_come_ambulance_yanoos_1.mp4",
+            "expected_result": ["when", "come", "ambulance"],
+            "hebrew_translation": "מתי יגיע האמבולנס"
+        },
+        {
+            "input_video": "I_need_go_home_yanoos_2.mp4",
+            "expected_result": ["I", "need", "go", "home"],
+            "hebrew_translation": "אני צריך ללכת הביתה"
+        },
+        {
+            "input_video": "I_need_go_home_yanoos_1.mp4",
+            "expected_result": ["I", "need", "go", "home"],
+            "hebrew_translation": "אני צריך ללכת הביתה"
+        },
+        {
+            "input_video": "when_come_appointment_yanoos_2.mp4",
+            "expected_result": ["when", "come", "appointment"],
+            "hebrew_translation": "מתי יגיע התור"
+        },
+        {
+            "input_video": "when_come_appointment_yanoos_1.mp4",
+            "expected_result": ["when", "come", "appointment"],
+            "hebrew_translation": "מתי יגיע התור"
+        },
+        {
+            "input_video": "you_need_idCard_yanoos_1.mp4",
+            "expected_result": ["you", "need", "idCard"],
+            "hebrew_translation": "אתה צריך תעודת זהות"
+        },
+        {
+            "input_video": "you_need_idCard_yanoos_2.mp4",
+            "expected_result": ["you", "need", "idCard"],
+            "hebrew_translation": "אתה צריך תעודת זהות"
+        },
+        {
+            "input_video": "I_need_doctor_yanoos_1.mp4",
+            "expected_result": ["I", "need", "doctor"],
+            "hebrew_translation": "אני צריך רופא"
+        },
+        {
+            "input_video": "I_need_doctor_yanoos_2.mp4",
+            "expected_result": ["I", "need", "doctor"],
+            "hebrew_translation": "אני צריך רופא"
         }
     ]
 

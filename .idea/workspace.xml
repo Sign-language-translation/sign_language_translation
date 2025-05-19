@@ -4,46 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I added logs and updated the code of the tests (words &amp; sentences)&#10;I updated the git ignore file">
-      <change afterPath="$PROJECT_DIR$/utils/detect_empty_jsons.py" afterDir="false" />
+    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated a few files do they will ignore empty jsons (defective videos)">
+      <change afterPath="$PROJECT_DIR$/codes_create_and_save_videos/check_videos_length.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/model_4.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test_codes_and_files/classify_attn.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/speed_augmentations_to_videos.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sign_language_translation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sign_language_translation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codes_create_and_save_videos/concatenate_videos.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_create_and_save_videos/concatenate_videos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codes_create_and_save_videos/translate_video_names_from_hebrew_to_english.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_create_and_save_videos/translate_video_names_from_hebrew_to_english.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codes_translation/translate_single_word.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_translation/translate_single_word.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_cnn_with_new_words_20_04.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_100_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_15_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_23_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_25_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_30_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_39_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_40_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_45_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_50_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_51_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_on_85_vpw.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/3d_rnn_cnn_with_new_words_20_04.keras" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_cnn_with_new_words_20_04.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_100_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_15_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_23_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_25_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_30_vpw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_30_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_39_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_40_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_45_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_50_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_51_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_85_vpw.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/label_encoder_3d_rnn_cnn_with_new_words_20_04.pkl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/model_3d_cnn_rnn.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/model_3d_cnn_rnn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/codes_translation/translate_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_translation/translate_sentence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/recreate_and_rerun_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/recreate_and_rerun_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/generated_motion_data/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_codes_and_files/logs/logs_single_word/3d_rnn_cnn_on_40_vpw.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/motion_data/.gitkeep" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_codes_and_files/test_single_word_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_codes_and_files/test_single_word_translation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/test_mediapipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/test_mediapipe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -78,12 +50,12 @@
     &quot;assignee&quot;: &quot;YaelMariasin&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/YaelMariasin/sign_language_translation.git",
-    "accountId": "58a18c27-4102-4f3a-a098-2b9731a60554"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/YaelMariasin/sign_language_translation.git&quot;,
+    &quot;accountId&quot;: &quot;58a18c27-4102-4f3a-a098-2b9731a60554&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/.venv/.gitignore" root0="SKIP_INSPECTION" />
   </component>
@@ -103,19 +75,27 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.check_sentence_translation.py.executor": "Debug",
+    "Python tests.pytest in check_sentence_translation.py.executor": "Debug",
+    "Python tests.pytest in test_sentence_translation.py.executor": "Run",
     "Python.3d_cnn.executor": "Run",
     "Python.3d_cnn_rnn.executor": "Run",
     "Python.app.executor": "Run",
+    "Python.check_videos_length.executor": "Run",
     "Python.classification.executor": "Run",
+    "Python.classify_attn.executor": "Debug",
     "Python.concatenate_videos.executor": "Run",
     "Python.create_database.executor": "Run",
     "Python.detect_empty_jsons.executor": "Debug",
     "Python.generate_motion_data.executor": "Run",
     "Python.recreate_and_rerun_model.executor": "Run",
     "Python.split_sentence.executor": "Debug",
+    "Python.test_mediapipe (1).executor": "Debug",
     "Python.test_mediapipe.executor": "Debug",
-    "Python.test_sentence_translation.executor": "Run",
+    "Python.test_sentence_translation (1).executor": "Run",
+    "Python.test_sentence_translation.executor": "Debug",
     "Python.test_single_word_translation.executor": "Run",
+    "Python.translate_sentence.executor": "Debug",
     "Python.translate_video_names_from_hebrew_to_english.executor": "Run",
     "Python.video_augmentation.executor": "Run",
     "Python.video_edit.executor": "Run",
@@ -123,14 +103,14 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/yaelm/Documents/4th_year_project/sign_language_translation/models",
+    "git-widget-placeholder": "yaels__branch",
+    "last_opened_file_path": "C:/Users/yaelm/Documents/4th_year_project/sign_language_translation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "PyScientificConfigurable",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -141,6 +121,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\test_codes_and_files" />
       <recent name="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\models" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -151,8 +132,8 @@
       <recent name="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\test_vid" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.test_single_word_translation">
-    <configuration name="detect_empty_jsons" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Python.test_sentence_translation (1)">
+    <configuration name="check_videos_length" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="sign_language_translation" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -161,12 +142,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codes_create_and_save_videos" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/detect_empty_jsons.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codes_create_and_save_videos/check_videos_length.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -175,7 +156,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="recreate_and_rerun_model" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="classify_attn" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="sign_language_translation" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,12 +165,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_codes_and_files" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/recreate_and_rerun_model.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_codes_and_files/classify_attn.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -221,7 +202,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test_sentence_translation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="test_sentence_translation (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="sign_language_translation" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -235,53 +216,17 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
+        </ENTRIES>
+      </EXTENSION>
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test_single_word_translation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="sign_language_translation" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test_codes_and_files" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test_codes_and_files/test_single_word_translation.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="translate_video_names_from_hebrew_to_english" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="sign_language_translation" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/codes_create_and_save_videos" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/codes_create_and_save_videos/translate_video_names_from_hebrew_to_english.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -292,19 +237,15 @@
     </configuration>
     <list>
       <item itemvalue="Python.test_mediapipe" />
-      <item itemvalue="Python.detect_empty_jsons" />
-      <item itemvalue="Python.translate_video_names_from_hebrew_to_english" />
-      <item itemvalue="Python.recreate_and_rerun_model" />
-      <item itemvalue="Python.test_sentence_translation" />
-      <item itemvalue="Python.test_single_word_translation" />
+      <item itemvalue="Python.check_videos_length" />
+      <item itemvalue="Python.classify_attn" />
+      <item itemvalue="Python.test_sentence_translation (1)" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.test_single_word_translation" />
-        <item itemvalue="Python.recreate_and_rerun_model" />
-        <item itemvalue="Python.detect_empty_jsons" />
-        <item itemvalue="Python.translate_video_names_from_hebrew_to_english" />
-        <item itemvalue="Python.test_sentence_translation" />
+        <item itemvalue="Python.test_sentence_translation (1)" />
+        <item itemvalue="Python.check_videos_length" />
+        <item itemvalue="Python.classify_attn" />
       </list>
     </recent_temporary>
   </component>
@@ -358,6 +299,15 @@
       <workItem from="1746468798360" duration="549000" />
       <workItem from="1746469358527" duration="471000" />
       <workItem from="1747166341306" duration="4362000" />
+      <workItem from="1747480286325" duration="14467000" />
+      <workItem from="1747517358309" duration="1726000" />
+      <workItem from="1747548856139" duration="16250000" />
+      <workItem from="1747598677067" duration="3218000" />
+      <workItem from="1747602663149" duration="215000" />
+      <workItem from="1747602888463" duration="45000" />
+      <workItem from="1747602941762" duration="122000" />
+      <workItem from="1747603073454" duration="8217000" />
+      <workItem from="1747654127907" duration="2231000" />
     </task>
     <task id="LOCAL‎-00001" summary="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created.">
       <option name="closed" value="true" />
@@ -402,7 +352,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created." />
-    <option name="LAST_COMMIT_MESSAGE" value="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created." />
+    <MESSAGE value="I updated a few files do they will ignore empty jsons (defective videos)" />
+    <option name="LAST_COMMIT_MESSAGE" value="I updated a few files do they will ignore empty jsons (defective videos)" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -418,43 +369,45 @@
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/models/model_3d_cnn_rnn.py</url>
-          <line>234</line>
-          <option name="timeStamp" value="53" />
+          <url>file://$PROJECT_DIR$/utils/trim_sign_language_dead_time.py</url>
+          <line>37</line>
+          <option name="timeStamp" value="82" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/recreate_and_rerun_model.py</url>
-          <line>57</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/utils/test_mediapipe.py</url>
-          <line>99</line>
-          <option name="timeStamp" value="67" />
+          <url>file://$PROJECT_DIR$/utils/trim_sign_language_dead_time.py</url>
+          <line>28</line>
+          <option name="timeStamp" value="84" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/sign_language_translation$classification.coverage" NAME="classification Coverage Results" MODIFIED="1736977710484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/concatenate_videos_py$translate_video_names_from_hebrew_to_english.coverage" NAME="translate_video_names_from_hebrew_to_english Coverage Results" MODIFIED="1747153890246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_create_and_save_videos" />
-    <SUITE FILE_PATH="coverage/concatenate_videos_py$recreate_and_rerun_model.coverage" NAME="recreate_and_rerun_model Coverage Results" MODIFIED="1747168587680" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$recreate_and_rerun_model.coverage" NAME="recreate_and_rerun_model Coverage Results" MODIFIED="1747600912855" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation" />
     <SUITE FILE_PATH="coverage/sign_language_translation$generate_motion_data.coverage" NAME="generate_motion_data Coverage Results" MODIFIED="1736967819912" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sign_language_translation$yanoos_tests.coverage" NAME="yanoos_tests Coverage Results" MODIFIED="1744189043384" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sign_language_translation$recreate_and_rerun_model.coverage" NAME="recreate_and_rerun_model Coverage Results" MODIFIED="1737022324081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$concatenate_videos.coverage" NAME="concatenate_videos Coverage Results" MODIFIED="1746735487315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_create_and_save_videos" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$test_single_word_translation.coverage" NAME="test_single_word_translation Coverage Results" MODIFIED="1747170562644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
-    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation.coverage" NAME="test_sentence_translation Coverage Results" MODIFIED="1746735670015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$split_sentence.coverage" NAME="split_sentence Coverage Results" MODIFIED="1745346211601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation__1_.coverage" NAME="test_sentence_translation (1) Coverage Results" MODIFIED="1747656570954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/sign_language_translation$video_augmentation.coverage" NAME="video_augmentation Coverage Results" MODIFIED="1745256905305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$classify_attn.coverage" NAME="classify_attn Coverage Results" MODIFIED="1747647213265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
+    <SUITE FILE_PATH="coverage/sign_language_translation$split_sentence.coverage" NAME="split_sentence Coverage Results" MODIFIED="1745266309747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
+    <SUITE FILE_PATH="coverage/sign_language_translation$app.coverage" NAME="app Coverage Results" MODIFIED="1744191711841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$pytest_in_check_sentence_translation_py.coverage" NAME="check_sentence_translation.py Coverage Results" MODIFIED="1747604152947" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
+    <SUITE FILE_PATH="coverage/sign_language_translation$classification.coverage" NAME="classification Coverage Results" MODIFIED="1736977710484" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$pytest_in_test_sentence_translation_py.coverage" NAME="pytest in test_sentence_translation.py Coverage Results" MODIFIED="1747654185737" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$translate_sentence.coverage" NAME="translate_sentence Coverage Results" MODIFIED="1747498558706" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_translation" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$translate_video_names_from_hebrew_to_english.coverage" NAME="translate_video_names_from_hebrew_to_english Coverage Results" MODIFIED="1747153890246" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_create_and_save_videos" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_mediapipe__1_.coverage" NAME="test_mediapipe (1) Coverage Results" MODIFIED="1747517815172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/sign_language_translation$recreate_and_rerun_model.coverage" NAME="recreate_and_rerun_model Coverage Results" MODIFIED="1737022324081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation.coverage" NAME="test_sentence_translation Coverage Results" MODIFIED="1747583503364" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/sign_language_translation$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1745257012275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$3d_cnn.coverage" NAME="3d_cnn Coverage Results" MODIFIED="1745342209175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/sign_language_translation$concatenate_videos.coverage" NAME="concatenate_videos Coverage Results" MODIFIED="1745266313765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$check_videos_length.coverage" NAME="check_videos_length Coverage Results" MODIFIED="1747652728568" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_create_and_save_videos" />
     <SUITE FILE_PATH="coverage/sign_language_translation$video_edit.coverage" NAME="video_edit Coverage Results" MODIFIED="1737028975533" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/sign_language_translation$3d_cnn_rnn.coverage" NAME="3d_cnn_rnn Coverage Results" MODIFIED="1745257091213" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
-    <SUITE FILE_PATH="coverage/sign_language_translation$split_sentence.coverage" NAME="split_sentence Coverage Results" MODIFIED="1745266309747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
     <SUITE FILE_PATH="coverage/sign_language_translation$test_mediapipe.coverage" NAME="test_mediapipe Coverage Results" MODIFIED="1745256608358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/sign_language_translation$app.coverage" NAME="app Coverage Results" MODIFIED="1744191711841" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/backend" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$detect_empty_jsons.coverage" NAME="detect_empty_jsons Coverage Results" MODIFIED="1747167152966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
   </component>
 </project>
