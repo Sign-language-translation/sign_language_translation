@@ -1,12 +1,31 @@
 <template>
   <div class="video-upload">
     <h2>Upload Your Sign Language Video</h2>
-    <input 
-      type="file"
-      accept="video/*" 
-      class="file-input"
-      @change="onFileChange"
-    >
+
+    <!-- Input row: file input + mode selector -->
+    <div class="input-row">
+      <input 
+        type="file"
+        accept="video/*" 
+        class="file-input"
+        @change="onFileChange"
+      >
+
+      <div class="input-options">
+        <select 
+          id="mode"
+          v-model="mode" 
+          class="mode-select">
+          <option value="sentence">
+            Sentence
+          </option>
+          <option value="word">
+            Word
+          </option>
+        </select>
+      </div>
+    </div>
+
     <!-- Video preview -->
     <div 
       v-if="videoPreview" 
@@ -27,7 +46,6 @@
     </button>
   </div>
 </template>
-  
   <script>
   export default {
     name: 'VideoUpload',
@@ -36,6 +54,7 @@
       return {
         videoFile: null,
         videoPreview: null, // For storing video preview URL
+        mode: 'sentence', // default
       };
     },
     methods: {
@@ -54,6 +73,7 @@
   
         const formData = new FormData();
         formData.append('video', this.videoFile);
+        formData.append('mode', this.mode); // Optional
   
         try {
           // Replace with your backend API endpoint
@@ -88,9 +108,43 @@
     font-weight: 100;
   }
 
+  .input-row {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between input and select */
+  flex-wrap: wrap; /* makes it responsive */
+  margin: 20px 0;
+  }
+
+  .file-input,
+  .mode-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    height: 42px;
+  }
+  
+ .file-input {
+  flex: 1;
+  min-width: 200px;
+  }
+
 
   .file-input::file-selector-button{
     font-family: 'Montserrat', sans-serif;
+  }
+
+  .input-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  }
+
+  .mode-select {
+  min-width: 150px;
   }
 
   .video-preview {
@@ -109,7 +163,6 @@
 
   .video-upload input {
     display: block;
-    margin: 20px 0;
     padding: 10px;
     width: 96.5%;
     border: 1px solid #ccc;
@@ -142,7 +195,7 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
   }
 
   .video-upload button:hover {

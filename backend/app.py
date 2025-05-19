@@ -36,27 +36,35 @@ def upload_file():
         return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files['video']
+    mode = request.form.get('mode', 'sentence') 
+
     if file and allowed_file(file.filename):
         filename = secure_filename(f"{uuid.uuid4()}_{file.filename}")
         file_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(file_path)
-        print(f"Video uploaded: {file_path}")
+        print(f"Video uploaded: {file_path}, Mode: {mode}")
 
+        # Extract keypoints
         data_frames = extract_motion_data("backend/"+ UPLOAD_FOLDER + "/" + filename)
 
-        # Here, you would process the video with your ML model
-        result = translate_sign_language(data_frames)
+        # Process with appropriate model based on mode
+        result = translate_sign_language(data_frames, mode)
 
         return jsonify({"translation": result}), 200
     else:
         return jsonify({"error": "Invalid file format"}), 400
 
 # Example function to simulate translation
-def translate_sign_language(data_frames):
+def translate_sign_language(data_frames, mode='sentence'):
     try:
-        # Define paths to model and label encoder
-        model_filename = os.path.join(os.path.dirname(__file__), '../models/3d_rnn_cnn_on_50_vpw.keras')
-        label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/label_encoder_3d_rnn_cnn.pkl')
+        if mode == 'word':
+            model_filename = os.path.join(os.path.dirname(__file__), '../models/3d_rnn_cnn_on_50_vpw.keras')
+            label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/label_encoder_3d_rnn_cnn.pkl')
+        elif mode == 'sentence':
+            model_filename = os.path.join(os.path.dirname(__file__), '../models/sentence_model.keras')
+            label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/sentence_label_encoder.pkl')
+        else:
+            return f"Unknown mode: {mode}"
 
 
         # Load the label encoder
@@ -64,8 +72,7 @@ def translate_sign_language(data_frames):
 
         # Get the classification result
         predicted_label = classify_json_file(model_filename, data_frames, label_encoder)
-
-        print("label: "  + predicted_label)
+        print(f"[{mode}] Predicted label: {predicted_label}")
 
         return predicted_label
 
