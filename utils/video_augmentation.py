@@ -21,7 +21,7 @@ from utils.generate_motion_data import (
 # AMOUNT_OF_VARIATIONS = 23
 
 # Path settings
-# original_folder = "motion_data"
+# original_folder = "motion_data_old"
 augmented_folder = "generated_motion_data"
 csv_file_path = "augmented_data_summary.csv"  # Output CSV file
 
@@ -63,7 +63,7 @@ def apply_random_augmentations(data):
 
 def augment_all_files(amount_of_variations, input_folder, output_folder):
     """
-    Augment all JSON files in the motion_data folder with random combinations of augmentations.
+    Augment all JSON files in the motion_data_old folder with random combinations of augmentations.
     """
     for file_name in os.listdir(input_folder):
         if file_name.endswith(".json"):
@@ -163,7 +163,7 @@ def write_to_csv(folder, csv_file):
 #
 if __name__ == "__main__":
     # Perform augmentations on all files
-    augment_all_files(input_folder="resources/motion_data", output_folder="resources/generated_motion_data")
+    augment_all_files(input_folder="resources/motion_data_old", output_folder="resources/generated_motion_data")
     # visualize_folder(augmented_folder)
     # write_to_csv(augmented_folder, csv_file_path)
     print("Augmentations complete! Check the generated_motion_data folder.")

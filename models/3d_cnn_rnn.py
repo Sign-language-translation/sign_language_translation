@@ -3,7 +3,7 @@ import tensorflow as tf
 from collections import Counter
 import json
 from create_database import read_all
-from resources.conver_json_to_vector import create_feature_vector
+from utils.conver_json_to_vector import create_feature_vector
 from tensorflow.keras.models import Model
 from tensorflow.keras.layers import (
     Dense, LSTM, Dropout, Bidirectional, BatchNormalization,

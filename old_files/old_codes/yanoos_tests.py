@@ -6,7 +6,7 @@ import numpy as np
 
 # Global configuration
 video_folder = "sign_language_videos/"
-json_folder = "motion_data/"
+json_folder = "motion_data_old/"
 output_folder = "generated_videos/"
 
 
@@ -82,7 +82,7 @@ def extract_motion_data(video_name, folder_name=video_folder):
     return output_data
 
 
-def motion_data_to_json(frames_data, video_name, folder_name="motion_data"):
+def motion_data_to_json(frames_data, video_name, folder_name="motion_data_old"):
     # Save motion data to a file
     json_path = folder_name + "/" + video_name + ".json"
     with open(json_path, "w") as f:

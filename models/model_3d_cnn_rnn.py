@@ -16,6 +16,8 @@ from sklearn.utils.class_weight import compute_class_weight
 import matplotlib.pyplot as plt
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
 import pickle
+import matplotlib
+matplotlib.use('Agg')
 
 
 def save_label_mapping(label_encoder, file_path):
@@ -94,9 +96,9 @@ def train_model(model, X_train, y_train, class_weights):
 
     history = model.fit(
         X_train, y_train,
-        validation_split=0.2,
-        epochs=50,
-        batch_size=32,
+        validation_split=0.3,
+        epochs=200,
+        batch_size=64,
         class_weight=class_weights,
         callbacks=callbacks
     )
@@ -123,8 +125,7 @@ def train_model(model, X_train, y_train, class_weights):
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
-
+    plt.savefig(f"models/local_models/training_history.png")
     return history
 
 def evaluate_model(model, X_test, y_test, label_encoder):

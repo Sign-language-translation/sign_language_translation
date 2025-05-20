@@ -3,19 +3,22 @@ import shutil
 import os
 from utils.test_mediapipe import create_original_motion_data
 from create_database import create_db, drop_video_data_table
-from models.model_3d_cnn_rnn import create_model
-
+# from models.model_3d_cnn_rnn import create_model
+# from models.local_models.model_3d_gcn_rnn import create_model
+from models.local_models.model_attention import create_model
+# from models.local_models.model_attention_improved import create_model
 # Path settings
 MOTION_DATA_FOLDER_PATH = "resources/motion_data"
 GENERATED_MOTION_DATA_FOLDER_PATH = "resources/generated_motion_data"
+# GENERATED_MOTION_DATA_FOLDER_PATH = "resources/motion_data_old"
 ORIGINAL_VIDEOS_DATA_FOLDER_PATH = "resources/sign_language_videos"
-MODELS_FOLDER = 'models'
+MODELS_FOLDER = 'models/local_models'
 
-# original_folder = "resources/motion_data"
+# original_folder = "resources/motion_data_old"
 # augmented_folder = "resources/generated_motion_data"
 
 # os.makedirs(augmented_folder, exist_ok=True)
-AMOUNT_OF_VARIATIONS = 40
+AMOUNT_OF_VARIATIONS = 14000
 
 def create_original_jsons(input_folder_path_original_videos, output_folder_path_motion_data):
     # Ensure the folder exists
@@ -45,17 +48,18 @@ def drop_db_table():
     drop_video_data_table()
 
 def main():
-    pkl_file_name = f"label_encoder_3d_rnn_cnn_{AMOUNT_OF_VARIATIONS}_vpw"
-    model_filename = f"3d_rnn_cnn_on_{AMOUNT_OF_VARIATIONS}_vpw"
+    i=5
+    pkl_file_name = f"label_encoder_model-{i}_{AMOUNT_OF_VARIATIONS}_vpw.pkl"
+    model_filename = f"model-{i}_{AMOUNT_OF_VARIATIONS}_vpw.keras"
 
     # Clear the old data
-    delete_folder_content(MOTION_DATA_FOLDER_PATH)
-    delete_folder_content(GENERATED_MOTION_DATA_FOLDER_PATH)
+    # delete_folder_content(MOTION_DATA_FOLDER_PATH)
+    # delete_folder_content(GENERATED_MOTION_DATA_FOLDER_PATH)
     drop_db_table()
-
-    create_original_jsons(ORIGINAL_VIDEOS_DATA_FOLDER_PATH, MOTION_DATA_FOLDER_PATH)
-    create_augmentations(MOTION_DATA_FOLDER_PATH, GENERATED_MOTION_DATA_FOLDER_PATH)
-    add_data_to_db(GENERATED_MOTION_DATA_FOLDER_PATH)
+    # #
+    # create_original_jsons(ORIGINAL_VIDEOS_DATA_FOLDER_PATH, MOTION_DATA_FOLDER_PATH)
+    # create_augmentations(MOTION_DATA_FOLDER_PATH, GENERATED_MOTION_DATA_FOLDER_PATH)
+    add_data_to_db(MOTION_DATA_FOLDER_PATH)
     create_model(pkl_file_name=pkl_file_name, model_filename=model_filename, models_folder_path=MODELS_FOLDER)
     print("Finished")
     print(pkl_file_name)

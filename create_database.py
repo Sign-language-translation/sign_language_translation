@@ -18,7 +18,35 @@ DB_NAME = os.getenv('DB_NAME')
 DATABASE_URL = f"postgresql://{DB_USER}:{DB_PASSWORD}@{DB_HOST}:{DB_PORT}/{DB_NAME}"
 engine = create_engine(DATABASE_URL)
 Base = declarative_base()
-
+ignore_labels = [
+    # 'bus',
+    # 'name',
+    # 'thanks',
+    # 'now',
+    # 'station'
+    # # 'go',
+    # 'help',
+    # 'when',
+    # 'phone',
+    # 'come',
+    # 'schedule',
+    # 'hello',
+    # 'doctor',
+    # 'home',
+    # 'need',
+    # 'why',
+    # 'arrive',
+    # 'you',
+    # 'clinic',
+    # 'I',
+    # 'place',
+    # 'card',
+    # 'idCard',
+    # 'appointment',
+    # 'later',
+    # 'no',
+    # 'ambulance',
+]
 # Define the VideoData table
 class VideoData(Base):
     __tablename__ = 'video_data'
@@ -40,32 +68,53 @@ def extract_label(file_name):
 def add_json_file(file_path, category):
     try:
         file_name = os.path.splitext(os.path.basename(file_path))[0]
-        label = file_name
-        with open(file_path, 'r', encoding='utf-8') as f:
-            json_output = json.load(f)
-        new_video = VideoData(
-            label=label,
-            category=category,
-            json_output=json.dumps(json_output)  # Store JSON as a string
-        )
-        session.add(new_video)
-        session.commit()
-        print(f"Added JSON file '{file_path}' to the database with ID: {new_video.id}")
+        label = file_name.split("_")[0]
+        if label not in ignore_labels:
+            with open(file_path, 'r', encoding='utf-8') as f:
+                json_output = json.load(f)
+            new_video = VideoData(
+                label=label,
+                category=category,
+                json_output=json.dumps(json_output)  # Store JSON as a string
+            )
+            session.add(new_video)
+            session.commit()
+            print(f"Added JSON file '{file_path}' to the database with ID: {new_video.id}")
     except Exception as e:
         session.rollback()
         print(f"Failed to add JSON file '{file_path}': {e}")
 
-# Function to add all JSON files from a folder to the database
+def is_json_non_empty(file_path):
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+            return bool(data)  # True if data is non-empty
+    except Exception:
+        return False
+
 def add_json_files_from_folder(folder_path, category):
+    defective_files = []
+
+
     try:
         for file_name in os.listdir(folder_path):
             if file_name.endswith('.json'):
                 file_path = os.path.join(folder_path, file_name)
-                add_json_file(file_path, category)
+                if is_json_non_empty(file_path):
+                    add_json_file(file_path, category)
+                else:
+                    print(f"Skipped defective JSON file: {file_name}")
+                    defective_files.append(file_name)
     except Exception as e:
         print(f"Failed to add JSON files from folder '{folder_path}': {e}")
 
-
+    # Log defective files
+    if defective_files:
+        log_path = os.path.join(folder_path, 'defective_json_log.txt')
+        with open(log_path, 'w', encoding='utf-8') as log_file:
+            for file_name in defective_files:
+                log_file.write(file_name + '\n')
+        print(f"Logged {len(defective_files)} defective files to '{log_path}'")
 # Function to read all records from the database and return a list of lists
 def read_all():
     try:
@@ -84,7 +133,7 @@ def get_json_by_id(record_id):
         record_id (int): The ID of the record in the database.
         
     Returns:
-         motion_data (dict): The JSON data as a Python dictionary.
+         motion_data_old (dict): The JSON data as a Python dictionary.
     """
     try:
         # Query the database for the record with the given ID

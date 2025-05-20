@@ -10,12 +10,12 @@ import math
 # os.makedirs("generated_motion_data", exist_ok=True)
 
 # folder_with_new_jsons = "generated_motion_data"
-# folder_with_original_jsons = "motion_data"
+# folder_with_original_jsons = "motion_data_old"
 
 
 def load_json(file_name, folder_path):
     """
-    Load a JSON file from the motion_data folder.
+    Load a JSON file from the motion_data_old folder.
 
     Args:
         file_name (str): The name of the JSON file to load.
@@ -217,7 +217,7 @@ def visualize_all_files(input_file_name, output_folder):
     """
     for file_name in os.listdir(output_folder):
         if file_name.startswith(input_file_name) and file_name.endswith(".json"):
-            visualize_motion_data(file_name)
+            visualize_motion_data(file_name,output_folder)
 
 
 # THAT FRESH
@@ -484,5 +484,5 @@ def fresh_generate_variations(file_name):
 if __name__ == "__main__":
 #     input_file_name = "cell_phone"  # Replace with the desired file name (without .json extension)
 #     fresh_generate_variations(input_file_name)
-#     visualize_all_files(input_file_name)
-    visualize_motion_data('trimmed_word.json')
+    visualize_all_files("ambu","/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old")
+    # visualize_motion_data('/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old/ambulance_14.json')

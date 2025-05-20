@@ -47,7 +47,7 @@ def classify_json_file(model_filename ,json_content, label_mapping):
         str: Predicted class label.
     """
     # Load the saved model
-    model = load_model(model_filename)
+    model = load_model(model_filename, compile=False)
 
     input_matrix = create_feature_vector(json_content)
     # Assuming `input_data` is your input of shape (32, 75, 3)
