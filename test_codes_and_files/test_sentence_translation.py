@@ -1,8 +1,11 @@
 import time
+import sys
 import os
 from datetime import datetime
 from codes_translation.translate_sentence import translate_video_to_text
 from test_single_word_translation import log, create_log_file
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 VIDEOS_FOLDER = "sentence_videos/"
 LOG_SENTENCE_FOLDER = 'logs/logs_sentence/'
@@ -86,4 +89,6 @@ def test_split_a_sentence(enable_logging=True):
             print(f"\n📝 Log saved to {log_path}")
 
 if __name__ == "__main__":
+    print("hello")
+    print(sys.path)
     test_split_a_sentence()

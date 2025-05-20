@@ -10,8 +10,10 @@ from flask import url_for
 # Add the parent directory of the backend folder to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-from resources.test_mediapipe import extract_motion_data
-from classification import load_label_mapping,classify_json_file
+# from resources.test_mediapipe import extract_motion_data
+# from classification import load_label_mapping,classify_json_file
+from codes_translation.translate_sentence import translate_video_to_text
+from codes_translation.translate_single_word import classify_single_word
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
@@ -19,6 +21,8 @@ CORS(app)  # Enable CORS for all routes
 UPLOAD_FOLDER = 'uploads'
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the upload folder exists
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+TEMP_FOLDER_PATH_OF_JSONS = 'json_files'
 
 # Define the folder where the word videos are stored
 VIDEO_FOLDER = 'videos'  
@@ -44,37 +48,39 @@ def upload_file():
         file.save(file_path)
         print(f"Video uploaded: {file_path}, Mode: {mode}")
 
-        # Extract keypoints
-        data_frames = extract_motion_data("backend/"+ UPLOAD_FOLDER + "/" + filename)
+        # # Extract keypoints
+        # data_frames = extract_motion_data("backend/"+ UPLOAD_FOLDER + "/" + filename)
 
         # Process with appropriate model based on mode
-        result = translate_sign_language(data_frames, mode)
+        result = translate_sign_language(filename, file_path, mode)
 
         return jsonify({"translation": result}), 200
     else:
         return jsonify({"error": "Invalid file format"}), 400
 
 # Example function to simulate translation
-def translate_sign_language(data_frames, mode='sentence'):
+def translate_sign_language(filename, file_path, mode='sentence'):
     try:
+        model_filename = os.path.join(os.path.dirname(__file__), '../models/model-5_14000_vpw.keras')
+        label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/label_encoder_model-5_14000_vpw.pkl')
+
         if mode == 'word':
-            model_filename = os.path.join(os.path.dirname(__file__), '../models/3d_rnn_cnn_on_50_vpw.keras')
-            label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/label_encoder_3d_rnn_cnn.pkl')
+            result = classify_single_word(UPLOAD_FOLDER, filename, TEMP_FOLDER_PATH_OF_JSONS, model_filename, label_encoder_path)
         elif mode == 'sentence':
-            model_filename = os.path.join(os.path.dirname(__file__), '../models/sentence_model.keras')
-            label_encoder_path = os.path.join(os.path.dirname(__file__), '../models/sentence_label_encoder.pkl')
+
+            result = translate_video_to_text(file_path, model_filename, label_encoder_path)
         else:
             return f"Unknown mode: {mode}"
 
 
-        # Load the label encoder
-        label_encoder = load_label_mapping(label_encoder_path)
+        # # Load the label encoder
+        # label_encoder = load_label_mapping(label_encoder_path)
 
-        # Get the classification result
-        predicted_label = classify_json_file(model_filename, data_frames, label_encoder)
-        print(f"[{mode}] Predicted label: {predicted_label}")
+        # # Get the classification result
+        # predicted_label = classify_json_file(model_filename, data_frames, label_encoder)
+        # print(f"[{mode}] Predicted label: {predicted_label}")
 
-        return predicted_label
+        return result
 
     except FileNotFoundError as e:
         return f"File not found: {e}"

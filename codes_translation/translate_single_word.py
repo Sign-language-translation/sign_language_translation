@@ -62,13 +62,13 @@ def classify_json_file(model_filename ,json_content, label_mapping):
 
     return predicted_label
 
-def classify(input_folder_path_of_videos, temp_folder_path_of_jsons, model_file_path, label_encoder_file_path):
+# def classify(input_folder_path_of_videos, temp_folder_path_of_jsons, model_file_path, label_encoder_file_path):
+#
+#     for file_name in os.listdir(input_folder_path_of_videos):
+#         if file_name.split('.')[1] == "mp4":
+#             classify_single_word(input_folder_path_of_videos + "/" + file_name, input_folder_path_of_videos, model_file_path, label_encoder_file_path)
 
-    for file_name in os.listdir(input_folder_path_of_videos):
-        if file_name.split('.')[1] == "mp4":
-            classify_single_word(input_folder_path_of_videos + "/" + file_name, input_folder_path_of_videos, model_file_path, label_encoder_file_path)
-
-def classify_single_word(input_video_folder_name, video_file_name, temp_folder_path_of_jsons, model_file_path, label_encoder_file_path):
+def classify_single_word(input_video_folder_name, video_file_name, temp_folder_path_of_jsons, model_file_path, label_encoder_file_path, log_folder_path=None):
     file_path = os.path.join(input_video_folder_name, video_file_name)
     if not os.path.exists(file_path):
         print(f"❌ File does not exist: {file_path}")
@@ -78,9 +78,14 @@ def classify_single_word(input_video_folder_name, video_file_name, temp_folder_p
         file_name = video_file_name.split('.')[0]
 
         trim_data = extract_motion_data(file_name, folder_name=input_video_folder_name)
-        motion_data_to_json(trim_data, file_name, folder_name=temp_folder_path_of_jsons)
+        motion_data_to_json(trim_data, file_name, folder_name=temp_folder_path_of_jsons, log_folder_path=log_folder_path)
 
         json_content = read_json_file(f"{temp_folder_path_of_jsons}/{file_name}.json")
+
+        # Check if JSON content is empty
+        if not json_content:
+            print(f"Skipped {file_name}: JSON content is empty.")
+            return None
 
         # Define a label mapping
         label_encoder = load_label_mapping(label_encoder_file_path)
@@ -99,4 +104,4 @@ if __name__ == "__main__":
     temp_folder_path_of_jsons = 'single_word_videos/jsons'
     model_file_name = 'models/3d_rnn_cnn_on_30_vpw.keras'
     label_encoder_file_name = 'models/label_encoder_3d_rnn_cnn_30_vpw.pkl'
-    classify(input_folder_path_of_videos, temp_folder_path_of_jsons, model_file_name, label_encoder_file_name)
+    # classify(input_folder_path_of_videos, temp_folder_path_of_jsons, model_file_name, label_encoder_file_name)
