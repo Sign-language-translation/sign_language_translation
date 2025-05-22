@@ -4,7 +4,7 @@ import numpy as np
 
 # Constants
 MAX_FRAMES = 150
-FACTOR = 3
+FACTOR = 1
 
 # Functions (as provided in your code)
 def create_feature_vector(frames_data, max_frames=MAX_FRAMES, factor=FACTOR):
@@ -71,7 +71,7 @@ def average_frames(frames, start_idx, factor=FACTOR):
     return vector / count if count > 0 else np.zeros((75, 3), dtype=np.float32)
 
 
-# json_path = "motion_data/brother.json"
+# json_path = "motion_data_old/brother.json"
 #
 # with open(json_path, "r") as file:
 #     frames_data = json.load(file)

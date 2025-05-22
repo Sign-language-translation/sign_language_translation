@@ -82,7 +82,8 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     margin-right: 10px;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: "Gisha", "Arial", "Helvetica", sans-serif;
   }
   
   button {
@@ -165,6 +166,7 @@
     margin: 0;
     font-size: 1em;
     color: #333;
+    font-family: "Gisha", "Arial", "Helvetica", sans-serif;
   }
   </style>
   

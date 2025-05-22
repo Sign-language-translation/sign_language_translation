@@ -43,11 +43,12 @@
   }
   
   .translation-result p {
-    font-size: 1em;
+    font-size: 1.2em;
     line-height: 1.5;
     color: #333;
     word-wrap: break-word;
     margin-top: -10px;
+    font-family: "Gisha", "Arial", "Helvetica", sans-serif;
   }
   
   </style>

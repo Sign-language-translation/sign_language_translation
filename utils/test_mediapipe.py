@@ -7,7 +7,7 @@ from utils.trim_sign_language_dead_time import detect_motion_and_trim
 
 # Global configuration
 video_folder = "resources/sign_language_videos/"
-json_folder = "resources/motion_data/"
+json_folder = "resources/motion_data_old/"
 output_folder = "resources/generated_videos/"
 
 
@@ -86,33 +86,13 @@ def extract_motion_data(video_name, folder_name=video_folder):
     #
     # return trimmed_data
 
-def motion_data_to_json(frames_data, video_name, folder_name, log_folder_path=None):
-    # Ensure log folder exists
-    if log_folder_path is None:
-        log_folder_path = os.getcwd()  # Set log folder path to the current working directory
-
-    os.makedirs(log_folder_path, exist_ok=True)
-
-    # Path to log file
-    log_path = os.path.join(log_folder_path, "defective_json_log.txt")
-
-    # Check if motion data is empty
-    if not frames_data:
-        # Append the defective video name to the log file
-        with open(log_path, "a") as log_file:
-            log_file.write(video_name + ".json\n")
-
-        print(f"Empty motion data for '{video_name}', logged to {log_path}")
-        return  # Skip saving the empty JSON file
-
+def motion_data_to_json(frames_data, video_name, folder_name):
     # Save motion data to a file
-    json_path = os.path.join(folder_name, video_name + ".json")
-    json_path = json_path.replace("\\", "/")
+    json_path = folder_name + "/" + video_name + ".json"
     with open(json_path, "w") as f:
         json.dump(frames_data, f)
 
     print(f"Motion data saved to {json_path}")
-
 
 def visualize_motion_data(video_name, json_folder):
     """Visualize motion data from a JSON file."""
@@ -274,20 +254,18 @@ def save_visualization_as_video(video_name):
 #
 #     # visualize_as_stick_figure(video_name)
 
-existing_words = ["help"]
 
-def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data"):
+def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data_old"):
     # Iterate through all files in the given folder
     for file_name in os.listdir(folder_name):
         # Check if the file is a video file (e.g., .mp4, .avi, etc.)
-        if file_name.endswith(('.mp4', '.avi', '.mov', '.mkv')):
-            if any(file_name.startswith(word + "_") for word in existing_words):
-                # Remove the file extension to get the video name
-                video_name = os.path.splitext(file_name)[0]
+        if file_name.endswith(('.mp4', '.avi', '.mov', '.mkv')):  # Adjust extensions as needed
+            # Remove the file extension to get the video name
+            video_name = os.path.splitext(file_name)[0]
 
-                # Extract motion data from the video
-                trim_data = extract_motion_data(video_name, folder_name = folder_name)
-                motion_data_to_json(trim_data, video_name, output_folder_path)
+            # Extract motion data from the video
+            trim_data = extract_motion_data(video_name)
+            motion_data_to_json(trim_data, video_name, output_folder_path)
 
 if __name__ == "__main__":
-    create_original_motion_data(folder_name = "resources/generated_videos", output_folder_path = "resources/original_motion_data")
+    create_original_motion_data("/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old","/Users/raananpevzner/try/sign_language_translation/test_codes_and_files/single_word_videos/our_videos_NOT_TRAINED/test_lena")
