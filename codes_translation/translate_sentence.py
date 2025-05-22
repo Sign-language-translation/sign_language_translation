@@ -1,6 +1,5 @@
 import os
 import time
-
 from openai import AzureOpenAI
 from dotenv import load_dotenv
 import threading
@@ -24,6 +23,26 @@ WINDOW_SIZE_STEP_SEC = 1
 AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
 AMOUNT_OF_GPT_CALLS = 5
 
+def create_segments_list(video_duration):
+    segments_list = []
+
+    for start_sec in np.arange(0, video_duration - MIN_WINDOW_SEC + 0.001, START_TIME_STEP_SEC):
+        for segment_duration in np.arange(MIN_WINDOW_SEC, MAX_WINDOW_SEC + 0.001, WINDOW_SIZE_STEP_SEC):
+            end_sec = start_sec + segment_duration
+
+            # Trim segment to not go past video duration
+            if start_sec >= video_duration:
+                continue
+            if end_sec > video_duration:
+                end_sec = video_duration
+
+            # --- keep only two digits after the decimal point ---
+            start_sec = round(start_sec, 2)
+            end_sec = round(end_sec, 2)
+
+            segments_list.append((start_sec, end_sec))
+
+    return segments_list
 
 def segment_video_with_opencv(duration, output_folder, cap, fps):
     segments = []
@@ -68,6 +87,7 @@ def process_segments_with_threads(video_path, model_path, label_encoder_path):
     fps = cap.get(cv2.CAP_PROP_FPS)
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     duration = total_frames / fps
+    duration = round(duration, 2)
 
     # start_time = time.time()
     segments = segment_video_with_opencv(duration, temp_folder, cap, fps)
@@ -121,108 +141,6 @@ def process_segments_with_threads(video_path, model_path, label_encoder_path):
         print(f"{start}-{end}s → {pred}")
 
     return sorted_predictions, duration
-
-#
-# def generate_prompt(predictions, video_duration):
-#     classification_text = "\n".join(
-#         f"{round(start, 1)}-{round(end, 1)}s → {pred or 'UNKNOWN'}"
-#         for start, end, pred in predictions
-#     )
-#
-#     estimated_word_count = round(video_duration / ((MIN_WINDOW_SEC + MAX_WINDOW_SEC) / 2))
-#
-#     # prompt = f"""
-#     # You are analyzing segments of a Hebrew Sign Language video to determine the most likely words that were signed.
-#     #
-#     # - The total video duration is {round(video_duration, 1)} seconds.
-#     # - On average, each word lasts between {MIN_WINDOW_SEC} and {MAX_WINDOW_SEC} seconds.
-#     # - Based on this, the total number of distinct words in the video should be approximately {estimated_word_count}.
-#     #
-#     # You are given classification results for gesture recognition. Each line represents a time window and the word the model detected for that segment:
-#     #
-#     # {classification_text}
-#     #
-#     # Your task is to extract only the **most likely words** signed in the video. Follow these rules strictly:
-#     #
-#     # 1. Only include a word if it appears in **at least 3 overlapping consecutive segments AND those segments together span at least 1.5 seconds of the timeline**.
-#     # 2. Ignore any word that appears in only 1 or 2 segments, or appears in non-continuous/isolated time windows.
-#     # 3. Do NOT include a word that appears briefly at the start or in the middle unless it persists clearly.
-#     # 4. Favor words that span **long stretches of time** or appear in **dense overlapping windows** — these are more reliable.
-#     # 5. Consider the average word duration. Do not include more than 5 words in total. Most likely, the number of signed words is around {estimated_word_count}.
-#     # 6. Return only the selected words, in order of appearance in the video. No extra explanations, no punctuation.
-#     #
-#     # Be strict: Do not include uncertain or short-lived classifications like "no" or "far" unless they clearly follow the rules above.
-#     # """
-#
-#     prompt = f"""
-#     You are analyzing segments of a Hebrew Sign Language video to determine the most likely words that were signed.
-#
-#     - The total video duration is {round(video_duration, 1)} seconds.
-#     - On average, each word lasts between {MIN_WINDOW_SEC} and {MAX_WINDOW_SEC} seconds.
-#     - Based on this, the total number of distinct words in the video should be approximately {estimated_word_count}.
-#
-#     You are given classification results for gesture recognition. Each line represents a time window and the word the model detected for that segment:
-#
-#     {classification_text}
-#
-#     Your task is to extract only the most likely words signed in the video, and then return a fluent and grammatically correct sentence in Hebrew using only the translated Hebrew words and appropriate linking/preposition words.
-#
-#     Follow these strict rules:
-#
-#     1. Only include a word if it appears in at least 3 overlapping consecutive segments AND those segments together span at least 1 second of the timeline.
-#     If multiple words meet the criteria, prefer the word that appears in more total segments and over a longer duration.
-#     2. Ignore any word that appears in only 1 or 2 segments, or appears in non-continuous/isolated time windows.
-#     3. Most likely, the number of signed words is around {estimated_word_count}.
-#     3. Strictly aim for no more than {estimated_word_count} signed words unless evidence is overwhelmingly strong for an additional word, words like תעודת זהות (idCard) are counted as 1 word because they appear together in the translation list you will get soon,.
-#     4. After selecting the valid words, translate them into Hebrew using the following dictionary.
-#     When constructing the sentence, you may use any grammatically appropriate form of the word, such as gender, number, or tense variations.
-#     For example, "go" may be translated as "ללכת", "הלך", "הולך", "הולכת", or "הולכים" based on the sentence context, if the person that is talking in the sentence is I(me), assume that it is a man.
-#     You may also combine words into Hebrew construct phrases (סמיכות).
-#     For example, if the word "station" and "bus" appear together, you can combine them into "תחנת אוטובוס" instead of using each word separately.
-#     Use common and natural Hebrew constructs when applicable.
-#
-#     hello: שלום
-#     thanks: תודה
-#     need: צריך
-#     now: עכשיו
-#     when: מתי
-#     why: למה
-#     appointment: תור
-#     schedule: לקבוע
-#     arrive: להגיע
-#     station: תחנה
-#     bus: אוטובוס
-#     phone: טלפון
-#     place: מקום
-#     help: לעזור
-#     name: שם
-#     no: לא
-#     go: ללכת
-#     come: לבוא
-#     I: אני
-#     you: אתה
-#     home: בית
-#     ticket: כרטיס
-#     later: אחר כך
-#     doctor: רופא
-#     idCard: תעודת זהות
-#     ambulance: אמבולנס
-#     clinic: קופת חולים
-#
-#     7. Use appropriate linking words (such as ל, אל, עם, ואז, לכן, ב, מ) to form a full natural Hebrew sentence that makes sense.
-#      dont add words from the list I send if they dont exist in the prediction list, you can add only linking words.
-#      the linking words 'or' and 'and' wont appear in the sentence.
-#      Exclude any word that appears in fewer than 3 total segments across the video, even if some of its segments are long.
-#     8. Return the final result as a single fluent Hebrew sentence only — no English, no explanations, and no punctuation at the end.
-#
-#     Be strict: only include reliable words that follow the above rules and are supported by the evidence.
-#     The final output must sound like a natural Hebrew sentence based on the detected signs.
-#     dont ignore words that appears more then 4 times in overlapping segments and dont add to the final sentence wirds that appeared twice or less.
-#
-#     the most important rule: before you return me an answer, make sure that it follows all the rules.
-#     """
-#
-#     return prompt
 
 def build_prompt1(classification_text, estimated_word_count, video_duration):
     prompt = f"""
@@ -320,18 +238,6 @@ def build_prompt4_summarize(prompt1_words, prompt2_words, prompt3_words):
 def call_gpt(message, client, deployment):
     chat_prompt = [{"role": "user", "content": [{"type": "text", "text": message}]}]
     # chat_prompt = [{"role": "user", "content": [{"type": "text", "text": msg}]} for msg in messages]
-
-    # completion = client.chat.completions.create(
-    #     model=deployment,
-    #     messages=chat_prompt,
-    #     max_tokens=800,
-    #     temperature=0.7,
-    #     top_p=0.95,
-    #     frequency_penalty=0,
-    #     presence_penalty=0,
-    #     stop=None,
-    #     stream=False
-    # )
 
     completion = client.chat.completions.create(
         model=deployment,
