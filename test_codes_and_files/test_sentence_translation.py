@@ -9,8 +9,12 @@ LOG_SENTENCE_FOLDER = 'logs/logs_sentence/'
 AMOUNT_OF_VARIATIONS = 10
 # MODEL_FILE_PATH = f'../models/3d_rnn_cnn_on_{AMOUNT_OF_VARIATIONS}_vpw.keras'
 # LABEL_ENCODER_FILE_PATH = f'../models/label_encoder_3d_rnn_cnn_{AMOUNT_OF_VARIATIONS}_vpw.pkl'
-MODEL_FILE_PATH = '..\\models\\attn-4_666_vpw.keras'
-LABEL_ENCODER_FILE_PATH = '..\\models\\label_encoder_attn-4_666_vpw.pkl'
+# model 4
+# MODEL_FILE_PATH = '..\\models\\attn-4_666_vpw.keras'
+# LABEL_ENCODER_FILE_PATH = '..\\models\\label_encoder_attn-4_666_vpw.pkl'
+# model 5
+MODEL_FILE_PATH = '..\\models\\model-5_14000_vpw.keras'
+LABEL_ENCODER_FILE_PATH = '..\\models\\label_encoder_model-5_14000_vpw.pkl'
 
 def test_split_a_sentence(enable_logging=True):
 
@@ -76,7 +80,7 @@ def test_split_a_sentence(enable_logging=True):
             "hebrew_translation": "מתי יגיע האמבולנס"
         },
         {
-            "input_video": "when_come_ambulance_yanoos_1.mp4",
+            "input_video": "when_come_ambulance_yanoos_1.mp4", # the first word is translated to why even that it appears only once!
             "expected_result": ["when", "come", "ambulance"],
             "hebrew_translation": "מתי יגיע האמבולנס"
         },
@@ -106,17 +110,17 @@ def test_split_a_sentence(enable_logging=True):
             "hebrew_translation": "אתה צריך תעודת זהות"
         },
         {
-            "input_video": "you_need_idCard_yanoos_2.mp4",
+            "input_video": "you_need_idCard_yanoos_2.mp4", # inaccurate!
             "expected_result": ["you", "need", "idCard"],
             "hebrew_translation": "אתה צריך תעודת זהות"
         },
         {
-            "input_video": "I_need_doctor_yanoos_1.mp4",
+            "input_video": "I_need_doctor_yanoos_1.mp4", # Accurately translated
             "expected_result": ["I", "need", "doctor"],
             "hebrew_translation": "אני צריך רופא"
         },
         {
-            "input_video": "I_need_doctor_yanoos_2.mp4",
+            "input_video": "I_need_doctor_yanoos_2.mp4", # inaccurate!
             "expected_result": ["I", "need", "doctor"],
             "hebrew_translation": "אני צריך רופא"
         }

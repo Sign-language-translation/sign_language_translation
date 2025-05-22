@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated a few files do they will ignore empty jsons (defective videos)">
-      <change afterPath="$PROJECT_DIR$/codes_create_and_save_videos/check_videos_length.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/models/model_4.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test_codes_and_files/classify_attn.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/speed_augmentations_to_videos.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sign_language_translation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sign_language_translation.iml" afterDir="false" />
+    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated the test sentence translation and changed the prompt - now the translation is to hebrew with linking words">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/codes_translation/translate_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_translation/translate_sentence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recreate_and_rerun_model.py" beforeDir="false" afterPath="$PROJECT_DIR$/recreate_and_rerun_model.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/motion_data/.gitkeep" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/test_mediapipe.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils/test_mediapipe.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -307,7 +298,7 @@
       <workItem from="1747602888463" duration="45000" />
       <workItem from="1747602941762" duration="122000" />
       <workItem from="1747603073454" duration="8217000" />
-      <workItem from="1747654127907" duration="2231000" />
+      <workItem from="1747654127907" duration="35852000" />
     </task>
     <task id="LOCAL‎-00001" summary="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created.">
       <option name="closed" value="true" />
@@ -333,7 +324,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1746388306993</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL‎-00004" summary="I updated the test sentence translation and changed the prompt - now the translation is to hebrew with linking words">
+      <option name="closed" value="true" />
+      <created>1747659725992</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL‎-00004" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1747659725992</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +352,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created." />
     <MESSAGE value="I updated a few files do they will ignore empty jsons (defective videos)" />
-    <option name="LAST_COMMIT_MESSAGE" value="I updated a few files do they will ignore empty jsons (defective videos)" />
+    <MESSAGE value="I updated the test sentence translation and changed the prompt - now the translation is to hebrew with linking words" />
+    <option name="LAST_COMMIT_MESSAGE" value="I updated the test sentence translation and changed the prompt - now the translation is to hebrew with linking words" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -388,7 +388,7 @@
     <SUITE FILE_PATH="coverage/concatenate_videos_py$concatenate_videos.coverage" NAME="concatenate_videos Coverage Results" MODIFIED="1746735487315" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_create_and_save_videos" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$test_single_word_translation.coverage" NAME="test_single_word_translation Coverage Results" MODIFIED="1747170562644" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$split_sentence.coverage" NAME="split_sentence Coverage Results" MODIFIED="1745346211601" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
-    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation__1_.coverage" NAME="test_sentence_translation (1) Coverage Results" MODIFIED="1747656570954" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation__1_.coverage" NAME="test_sentence_translation (1) Coverage Results" MODIFIED="1747854608799" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/sign_language_translation$video_augmentation.coverage" NAME="video_augmentation Coverage Results" MODIFIED="1745256905305" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$classify_attn.coverage" NAME="classify_attn Coverage Results" MODIFIED="1747647213265" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/sign_language_translation$split_sentence.coverage" NAME="split_sentence Coverage Results" MODIFIED="1745266309747" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />
