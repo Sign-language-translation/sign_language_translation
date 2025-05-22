@@ -147,3 +147,4 @@ def test_single_word_classification(run_all_files=False, enable_logging=True):
 
 if __name__ == "__main__":
     test_single_word_classification(run_all_files=True)
+

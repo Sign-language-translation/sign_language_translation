@@ -8,6 +8,9 @@ from tensorflow.keras.layers import Layer, InputSpec
 from utils.conver_json_to_vector import create_feature_vector
 from utils.test_mediapipe import extract_motion_data, motion_data_to_json
 
+# Global model cache
+MODEL_CACHE = None
+
 # ────────────────────────────────────────────────────────────────────────────────
 # 1) Re-declare your custom SelfAttention so load_model can deserialize it
 # ────────────────────────────────────────────────────────────────────────────────
@@ -73,11 +76,19 @@ def load_label_mapping(file_path):
 # ────────────────────────────────────────────────────────────────────────────────
 def classify_json_file(model_filename, json_content, label_mapping):
     # 1) load model once per call (or cache externally)
-    model = load_model(
-        model_filename,
-        compile=False,
-        custom_objects={'SelfAttention': SelfAttention}
-    )
+    # model = load_model(
+    #     model_filename,
+    #     compile=False,
+    #     custom_objects={'SelfAttention': SelfAttention}
+    # )
+    global MODEL_CACHE
+    if MODEL_CACHE is None:
+        MODEL_CACHE = load_model(
+            model_filename,
+            compile=False,
+            custom_objects={'SelfAttention': SelfAttention}
+        )
+    model = MODEL_CACHE
 
     # 2) convert JSON → feature array
     mat = create_feature_vector(json_content)  # e.g. shape (T,H,W,C)
@@ -87,6 +98,8 @@ def classify_json_file(model_filename, json_content, label_mapping):
     preds = model.predict(x)
     idx = int(np.argmax(preds, axis=-1)[0])
     return label_mapping[idx]
+
+
 
 # ────────────────────────────────────────────────────────────────────────────────
 # 4) Your existing classify / classify_single_word flow, unchanged
