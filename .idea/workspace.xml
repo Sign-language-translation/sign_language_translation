@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated the prompts to gpt">
-      <change beforePath="$PROJECT_DIR$/.idea/sign_language_translation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sign_language_translation.iml" afterDir="false" />
+    <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated the translate_sentence.py file and added tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/codes_translation/translate_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/codes_translation/translate_sentence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,53 +63,53 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python tests.check_sentence_translation.py.executor": "Debug",
-    "Python tests.pytest in check_sentence_translation.py.executor": "Debug",
-    "Python tests.pytest in test_sentence_translation.py.executor": "Debug",
-    "Python tests.test_sentence_translation.py.executor": "Debug",
-    "Python.3d_cnn.executor": "Run",
-    "Python.3d_cnn_rnn.executor": "Run",
-    "Python.app.executor": "Run",
-    "Python.check_videos_length.executor": "Run",
-    "Python.classification.executor": "Run",
-    "Python.classify_attn.executor": "Debug",
-    "Python.concatenate_videos.executor": "Run",
-    "Python.create_database.executor": "Run",
-    "Python.detect_empty_jsons.executor": "Debug",
-    "Python.generate_motion_data.executor": "Run",
-    "Python.recreate_and_rerun_model.executor": "Run",
-    "Python.split_sentence.executor": "Debug",
-    "Python.test_mediapipe (1).executor": "Debug",
-    "Python.test_mediapipe.executor": "Debug",
-    "Python.test_sentence_translation (1).executor": "Run",
-    "Python.test_sentence_translation.executor": "Run",
-    "Python.test_single_word_translation.executor": "Run",
-    "Python.translate_sentence.executor": "Debug",
-    "Python.translate_video_names_from_hebrew_to_english.executor": "Run",
-    "Python.video_augmentation.executor": "Run",
-    "Python.video_edit.executor": "Run",
-    "Python.yanoos_tests.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "yaels__branch",
-    "last_opened_file_path": "C:/Users/yaelm/Documents/4th_year_project/sign_language_translation",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python tests.check_sentence_translation.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest in check_sentence_translation.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.pytest in test_sentence_translation.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python tests.test_sentence_translation.py.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.3d_cnn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.3d_cnn_rnn.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.check_videos_length.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classification.executor&quot;: &quot;Run&quot;,
+    &quot;Python.classify_attn.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.concatenate_videos.executor&quot;: &quot;Run&quot;,
+    &quot;Python.create_database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.detect_empty_jsons.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.generate_motion_data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.recreate_and_rerun_model.executor&quot;: &quot;Run&quot;,
+    &quot;Python.split_sentence.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_mediapipe (1).executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_mediapipe.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.test_sentence_translation (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_sentence_translation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_single_word_translation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.translate_sentence.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.translate_video_names_from_hebrew_to_english.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_augmentation.executor&quot;: &quot;Run&quot;,
+    &quot;Python.video_edit.executor&quot;: &quot;Run&quot;,
+    &quot;Python.yanoos_tests.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;yaels__branch&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/yaelm/Documents/4th_year_project/sign_language_translation&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyIntegratedToolsModulesConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\yaelm\Documents\4th_year_project\sign_language_translation\test_codes_and_files" />
@@ -252,11 +250,11 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.test_mediapipe" />
-      <item itemvalue="Python.translate_sentence" />
       <item itemvalue="Python.check_videos_length" />
       <item itemvalue="Python.classify_attn" />
+      <item itemvalue="Python.test_mediapipe" />
       <item itemvalue="Python.test_sentence_translation" />
+      <item itemvalue="Python.translate_sentence" />
     </list>
     <recent_temporary>
       <list>
@@ -326,7 +324,7 @@
       <workItem from="1747602941762" duration="122000" />
       <workItem from="1747603073454" duration="8217000" />
       <workItem from="1747654127907" duration="41782000" />
-      <workItem from="1747903387163" duration="8469000" />
+      <workItem from="1747903387163" duration="15111000" />
     </task>
     <task id="LOCAL‎-00001" summary="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created.">
       <option name="closed" value="true" />
@@ -368,7 +366,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1747897429353</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL‎-00006" summary="I updated the translate_sentence.py file and added tests">
+      <option name="closed" value="true" />
+      <created>1747912510747</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL‎-00006" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1747912510747</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -390,7 +396,8 @@
     <MESSAGE value="I updated a few files do they will ignore empty jsons (defective videos)" />
     <MESSAGE value="I updated the test sentence translation and changed the prompt - now the translation is to hebrew with linking words" />
     <MESSAGE value="I updated the prompts to gpt" />
-    <option name="LAST_COMMIT_MESSAGE" value="I updated the prompts to gpt" />
+    <MESSAGE value="I updated the translate_sentence.py file and added tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="I updated the translate_sentence.py file and added tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -417,7 +424,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py</url>
-          <line>222</line>
+          <line>224</line>
           <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
@@ -442,7 +449,7 @@
     <SUITE FILE_PATH="coverage/concatenate_videos_py$translate_sentence.coverage" NAME="translate_sentence Coverage Results" MODIFIED="1747903441382" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/codes_translation" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$test_mediapipe__1_.coverage" NAME="test_mediapipe (1) Coverage Results" MODIFIED="1747517815172" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
     <SUITE FILE_PATH="coverage/sign_language_translation$recreate_and_rerun_model.coverage" NAME="recreate_and_rerun_model Coverage Results" MODIFIED="1737022324081" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation.coverage" NAME="test_sentence_translation Coverage Results" MODIFIED="1747912337878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
+    <SUITE FILE_PATH="coverage/concatenate_videos_py$test_sentence_translation.coverage" NAME="test_sentence_translation Coverage Results" MODIFIED="1747917590102" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/test_codes_and_files" />
     <SUITE FILE_PATH="coverage/sign_language_translation$create_database.coverage" NAME="create_database Coverage Results" MODIFIED="1745257012275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/concatenate_videos_py$3d_cnn.coverage" NAME="3d_cnn Coverage Results" MODIFIED="1745342209175" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/sign_language_translation$concatenate_videos.coverage" NAME="concatenate_videos Coverage Results" MODIFIED="1745266313765" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/split_sentence_to_words" />

@@ -23,16 +23,16 @@ AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
 def test_split_a_sentence(enable_logging=True):
 
     test_cases = [
-        # {
-        #     "input_video": "I_arrive_clinic_later_yanoos_2.mp4",
-        #     "expected_result": ["I", "arrive", "clinic", "later"],
-        #     "hebrew_translation":"אני אגיע לקופת חולים אחר כך"
-        # },
-        # {
-        #     "input_video": "I_arrive_clinic_later_yanoos_1.mp4",
-        #     "expected_result": ["I", "arrive", "clinic", "later"],
-        #     "hebrew_translation": "אני אגיע לקופת חולים אחר כך"
-        # },
+        {
+            "input_video": "I_arrive_clinic_later_yanoos_2.mp4",
+            "expected_result": ["I", "arrive", "clinic", "later"],
+            "hebrew_translation":"אני אגיע לקופת חולים אחר כך"
+        },
+        {
+            "input_video": "I_arrive_clinic_later_yanoos_1.mp4",
+            "expected_result": ["I", "arrive", "clinic", "later"],
+            "hebrew_translation": "אני אגיע לקופת חולים אחר כך"
+        },
         # {
         #     "input_video": "why_I_need_phone_yanoos_2.mp4",
         #     "expected_result": ["why", "I", "need", "phone"],
@@ -136,14 +136,16 @@ def test_split_a_sentence(enable_logging=True):
         #     "input_video": "I_need_doctor_yael_2.mp4",
         #     "hebrew_translation": "אני צריך רופא"
         # },
-        {
-            "input_video": "I_need_schedule_appointment_yael.mp4",
-            "hebrew_translation": "אני צריך לקבוע תור"
-        },
-        {
-            "input_video": "I_need_schedule_appointment_lena.mp4",
-            "hebrew_translation": "אני צריך לקבוע תור"
-        },
+        # {
+        #     "input_video": "I_need_schedule_appointment_yael.mp4",
+        #     "hebrew_translation": "אני צריך לקבוע תור"
+        # },
+        # {
+        #     "input_video": "I_need_schedule_appointment_lena.mp4",
+        #     "hebrew_translation": "אני צריך לקבוע תור"
+        # },
+
+
 
 
         # {
