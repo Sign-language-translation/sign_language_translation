@@ -1,0 +1,57 @@
+
+=== Test Summary ===
+
+Test 1/8 — I_walk_far_test_0_75_speed.mp4
+Time taken: 33.94 seconds
+❌ Test failed
+Expected: ['I', 'walk', 'far']
+Received: ['I', 'walk', 'you']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 2/8 — when_you_come_test_0_75_speed.mp4
+Time taken: 28.19 seconds
+❌ Test failed
+Expected: ['when', 'you', 'come']
+Received: ['angry', 'you', 'come']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 3/8 — you_welcome_test_0_75_speed.mp4
+Time taken: 18.70 seconds
+✅ Test passed
+Result: you welcome
+✔️ Success: 2/2 words correct (100.0%)
+
+Test 4/8 — when_you_hungry_test_0_75_speed.mp4
+Time taken: 32.07 seconds
+❌ Test failed
+Expected: ['when', 'you', 'hungry']
+Received: ['hungry', 'you', 'hungry']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 5/8 — I_no_walk_test_0_75_speed.mp4
+Time taken: 33.31 seconds
+❌ Test failed
+Expected: ['I', 'no', 'walk']
+Received: ['I', 'hungry', 'walk', 'far']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 6/8 — you_walk_far_saturday_test_0_75_speed.mp4
+Time taken: 40.39 seconds
+❌ Test failed
+Expected: ['you', 'walk', 'far', 'saturday']
+Received: ['far', 'walk', 'you', 'saturday']
+✔️ Success: 4/4 words correct (100.0%)
+
+Test 7/8 — I_no_angry_test_0_75_speed.mp4
+Time taken: 34.48 seconds
+❌ Test failed
+Expected: ['I', 'no', 'angry']
+Received: ['I', 'hungry', 'angry']
+✔️ Success: 2/3 words correct (66.7%)
+
+Test 8/8 — I_no_far_test_0_75_speed.mp4
+Time taken: 33.21 seconds
+❌ Test failed
+Expected: ['I', 'no', 'far']
+Received: ['I', 'hungry', 'walk']
+✔️ Success: 1/3 words correct (33.3%)

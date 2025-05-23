@@ -1,0 +1,174 @@
+
+=== Single Word Test Summary ===
+
+Test 1/26 — angry_1.mp4
+Time taken: 3.42 seconds
+✅ Test passed
+
+=== Conclusion: 1/26 tests passed (3.8%) ===
+
+Test 2/26 — angry_4.mp4
+Time taken: 2.72 seconds
+✅ Test passed
+
+=== Conclusion: 2/26 tests passed (7.7%) ===
+
+Test 3/26 — angry_5.mp4
+Time taken: 2.68 seconds
+✅ Test passed
+
+=== Conclusion: 3/26 tests passed (11.5%) ===
+
+Test 4/26 — come_2.mp4
+Time taken: 1.25 seconds
+❌ Test failed
+Expected: come
+Received: far
+
+=== Conclusion: 3/26 tests passed (11.5%) ===
+
+Test 5/26 — come_7.mp4
+Time taken: 2.22 seconds
+✅ Test passed
+
+=== Conclusion: 4/26 tests passed (15.4%) ===
+
+Test 6/26 — far_3.mp4
+Time taken: 3.05 seconds
+✅ Test passed
+
+=== Conclusion: 5/26 tests passed (19.2%) ===
+
+Test 7/26 — far_6.mp4
+Time taken: 2.66 seconds
+✅ Test passed
+
+=== Conclusion: 6/26 tests passed (23.1%) ===
+
+Test 8/26 — house_3.mp4
+Time taken: 1.63 seconds
+❌ Test failed
+Expected: house
+Received: far
+
+=== Conclusion: 6/26 tests passed (23.1%) ===
+
+Test 9/26 — house_4.mp4
+Time taken: 1.52 seconds
+❌ Test failed
+Expected: house
+Received: far
+
+=== Conclusion: 6/26 tests passed (23.1%) ===
+
+Test 10/26 — hungry_3.mp4
+Time taken: 2.58 seconds
+❌ Test failed
+Expected: hungry
+Received: far
+
+=== Conclusion: 6/26 tests passed (23.1%) ===
+
+Test 11/26 — hungry_5.mp4
+Time taken: 1.91 seconds
+✅ Test passed
+
+=== Conclusion: 7/26 tests passed (26.9%) ===
+
+Test 12/26 — I_5.mp4
+Time taken: 2.47 seconds
+✅ Test passed
+
+=== Conclusion: 8/26 tests passed (30.8%) ===
+
+Test 13/26 — I_6.mp4
+Time taken: 2.29 seconds
+✅ Test passed
+
+=== Conclusion: 9/26 tests passed (34.6%) ===
+
+Test 14/26 — no_7.mp4
+Time taken: 2.15 seconds
+✅ Test passed
+
+=== Conclusion: 10/26 tests passed (38.5%) ===
+
+Test 15/26 — rest_5.mp4
+Time taken: 1.36 seconds
+❌ Test failed
+Expected: rest
+Received: far
+
+=== Conclusion: 10/26 tests passed (38.5%) ===
+
+Test 16/26 — saturday_5.mp4
+Time taken: 2.88 seconds
+❌ Test failed
+Expected: saturday
+Received: far
+
+=== Conclusion: 10/26 tests passed (38.5%) ===
+
+Test 17/26 — saturday_8.mp4
+Time taken: 2.37 seconds
+✅ Test passed
+
+=== Conclusion: 11/26 tests passed (42.3%) ===
+
+Test 18/26 — walk_7.mp4
+Time taken: 2.02 seconds
+✅ Test passed
+
+=== Conclusion: 12/26 tests passed (46.2%) ===
+
+Test 19/26 — walk_8.mp4
+Time taken: 2.42 seconds
+✅ Test passed
+
+=== Conclusion: 13/26 tests passed (50.0%) ===
+
+Test 20/26 — welcome_6.mp4
+Time taken: 2.31 seconds
+✅ Test passed
+
+=== Conclusion: 14/26 tests passed (53.8%) ===
+
+Test 21/26 — when_3.mp4
+Time taken: 1.75 seconds
+✅ Test passed
+
+=== Conclusion: 15/26 tests passed (57.7%) ===
+
+Test 22/26 — when_6.mp4
+Time taken: 1.22 seconds
+✅ Test passed
+
+=== Conclusion: 16/26 tests passed (61.5%) ===
+
+Test 23/26 — why_4.mp4
+Time taken: 1.73 seconds
+❌ Test failed
+Expected: why
+Received: far
+
+=== Conclusion: 16/26 tests passed (61.5%) ===
+
+Test 24/26 — why_6.mp4
+Time taken: 1.87 seconds
+❌ Test failed
+Expected: why
+Received: far
+
+=== Conclusion: 16/26 tests passed (61.5%) ===
+
+Test 25/26 — you_2.mp4
+Time taken: 1.60 seconds
+✅ Test passed
+
+=== Conclusion: 17/26 tests passed (65.4%) ===
+
+Test 26/26 — you_3.mp4
+Time taken: 2.03 seconds
+✅ Test passed
+
+=== Conclusion: 18/26 tests passed (69.2%) ===

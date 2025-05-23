@@ -1,0 +1,35 @@
+
+=== Test Summary ===
+
+Test 1/4 — I_need_doctor_yanoos_live.mp4
+Time taken: 54.24 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 2/4 — I_need_doctor_yael_live.mp4
+Time taken: 46.44 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 3/4 — I_need_schedule_appointment_yael_live.mp4
+Time taken: 51.12 seconds
+Expected: אני צריך לקבוע תור
+Received: אני עם טלפון עכשיו
+Semantic Similarity: 15.0%
+
+Test 4/4 — I_need_schedule_appointment_yanoos_live.mp4
+Time taken: 83.71 seconds
+Expected: אני צריך לקבוע תור
+Received: אני צריך אמבולנס עכשיוו
+Semantic Similarity: 35.0%
+
+Statistical summary of test results:
+Total number of tests: 4
+Tests with perfect similarity (100%): 2
+Average similarity score: 62.5%
+Tests with similarity score 90% or higher: 2
+Tests with similarity score below 70%: 2
+Minimum similarity score: 15.0%
+Maximum similarity score: 100.0%

@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/2 — I_arrive_clinic_later_yanoos_2.mp4
+Time taken: 97.04 seconds
+Expected: אני אגיע לקופת חולים אחר כך
+Received: אני הולך לקופת חולים אחר כך
+Semantic Similarity: 97.0%
+
+Test 2/2 — I_need_doctor_yanoos_2.mp4
+Time taken: 41.30 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Statistical summary of test results:
+Total number of tests: 2
+Tests with perfect similarity (100%): 1
+Average similarity score: 98.5%
+Tests with similarity score 90% or higher: 2
+Tests with similarity score below 70%: 0
+Minimum similarity score: 97.0%
+Maximum similarity score: 100.0%

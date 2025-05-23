@@ -1,0 +1,106 @@
+
+=== Single Word Test Summary ===
+
+Test 1/19 — bus_from_drive_1.mp4
+Time taken: 26.59 seconds
+❌ Test failed
+Expected: bus
+Received: clinic
+
+Test 2/19 — bus_from_drive_2.mp4
+Time taken: 57.51 seconds
+❌ Test failed
+Expected: bus
+Received: help
+
+Test 3/19 — come_2.mp4
+Time taken: 1.49 seconds
+❌ Test failed
+Expected: come
+Received: None
+
+Test 4/19 — come_7.mp4
+Time taken: 4.53 seconds
+❌ Test failed
+Expected: come
+Received: home
+
+Test 5/19 — go_7.mp4
+Time taken: 4.27 seconds
+❌ Test failed
+Expected: go
+Received: you
+
+Test 6/19 — go_8.mp4
+Time taken: 5.48 seconds
+❌ Test failed
+Expected: go
+Received: you
+
+Test 7/19 — home_3.mp4
+Time taken: 1.87 seconds
+❌ Test failed
+Expected: home
+Received: None
+
+Test 8/19 — home_4.mp4
+Time taken: 1.79 seconds
+❌ Test failed
+Expected: home
+Received: None
+
+Test 9/19 — I_5.mp4
+Time taken: 4.36 seconds
+❌ Test failed
+Expected: I
+Received: phone
+
+Test 10/19 — I_6.mp4
+Time taken: 4.34 seconds
+✅ Test passed
+
+Test 11/19 — no_7.mp4
+Time taken: 4.27 seconds
+❌ Test failed
+Expected: no
+Received: thanks
+
+Test 12/19 — phone_from_drive_1.mp4
+Time taken: 8.65 seconds
+✅ Test passed
+
+Test 13/19 — phone_from_drive_2.mp4
+Time taken: 5.00 seconds
+❌ Test failed
+Expected: phone
+Received: None
+
+Test 14/19 — when_3.mp4
+Time taken: 3.89 seconds
+✅ Test passed
+
+Test 15/19 — when_6.mp4
+Time taken: 2.64 seconds
+✅ Test passed
+
+Test 16/19 — why_4.mp4
+Time taken: 2.25 seconds
+❌ Test failed
+Expected: why
+Received: None
+
+Test 17/19 — why_6.mp4
+Time taken: 2.47 seconds
+❌ Test failed
+Expected: why
+Received: None
+
+Test 18/19 — you_2.mp4
+Time taken: 3.41 seconds
+✅ Test passed
+
+Test 19/19 — you_3.mp4
+Time taken: 4.24 seconds
+✅ Test passed
+
+=== Conclusion: 6/19 tests passed (31.6%) ===

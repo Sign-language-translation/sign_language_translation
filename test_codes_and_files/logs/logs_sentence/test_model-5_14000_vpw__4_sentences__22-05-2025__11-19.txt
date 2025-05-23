@@ -1,0 +1,26 @@
+
+=== Test Summary ===
+
+Test 1/4 — I_arrive_clinic_later_yanoos_1.mp4
+Time taken: 89.41 seconds
+Expected: אני אגיע לקופת חולים אחר כך
+Received: אני שם ללכת לקופת חולים אחר כך
+✔️ Semantic Similarity: 95.0%
+
+Test 2/4 — hello_I_need_doctor_yanoos_1.mp4
+Time taken: 63.77 seconds
+Expected: שלום אני צריך רופא
+Received: שלום אני צריך רופא
+✔️ Semantic Similarity: 100.0%
+
+Test 3/4 — I_go_station_bus_yanoos_2.mp4
+Time taken: 55.61 seconds
+Expected: אני הולך לתחנת אוטובוס
+Received: אני צריך ללכת אל תחנה עם אוטובוס
+✔️ Semantic Similarity: 85.0%
+
+Test 4/4 — I_go_station_bus_yanoos_1.mp4
+Time taken: 56.52 seconds
+Expected: אני הולך לתחנת אוטובוס
+Received: אני הולך לתחנת האוטובוס
+✔️ Semantic Similarity: 98.0%

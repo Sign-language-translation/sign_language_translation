@@ -1,0 +1,82 @@
+
+=== Single Word Test Summary ===
+
+Test 1/15 — come_2.mp4
+Time taken: 1.29 seconds
+❌ Test failed
+Expected: come
+Received: need
+
+Test 2/15 — come_7.mp4
+Time taken: 2.10 seconds
+❌ Test failed
+Expected: come
+Received: home
+
+Test 3/15 — go_7.mp4
+Time taken: 2.24 seconds
+✅ Test passed
+
+Test 4/15 — go_8.mp4
+Time taken: 3.02 seconds
+❌ Test failed
+Expected: go
+Received: you
+
+Test 5/15 — home_3.mp4
+Time taken: 2.10 seconds
+❌ Test failed
+Expected: home
+Received: need
+
+Test 6/15 — home_4.mp4
+Time taken: 1.77 seconds
+❌ Test failed
+Expected: home
+Received: need
+
+Test 7/15 — I_5.mp4
+Time taken: 2.85 seconds
+✅ Test passed
+
+Test 8/15 — I_6.mp4
+Time taken: 2.55 seconds
+✅ Test passed
+
+Test 9/15 — no_7.mp4
+Time taken: 2.81 seconds
+❌ Test failed
+Expected: no
+Received: thanks
+
+Test 10/15 — when_3.mp4
+Time taken: 2.09 seconds
+✅ Test passed
+
+Test 11/15 — when_6.mp4
+Time taken: 1.49 seconds
+❌ Test failed
+Expected: when
+Received: now
+
+Test 12/15 — why_4.mp4
+Time taken: 2.40 seconds
+❌ Test failed
+Expected: why
+Received: need
+
+Test 13/15 — why_6.mp4
+Time taken: 2.31 seconds
+❌ Test failed
+Expected: why
+Received: need
+
+Test 14/15 — you_2.mp4
+Time taken: 2.10 seconds
+✅ Test passed
+
+Test 15/15 — you_3.mp4
+Time taken: 2.76 seconds
+✅ Test passed
+
+=== Conclusion: 6/15 tests passed (40.0%) ===

@@ -1,0 +1,149 @@
+
+=== Test Summary ===
+
+Test 1/21 — I_arrive_clinic_later_yanoos_2.mp4
+Time taken: 105.69 seconds
+❌ Test failed
+Expected: ['I', 'arrive', 'clinic', 'later']
+Received: אני הולך לקופת חולים אחר כך
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 2/21 — I_arrive_clinic_later_yanoos_1.mp4
+Time taken: 97.92 seconds
+❌ Test failed
+Expected: ['I', 'arrive', 'clinic', 'later']
+Received: אני שם ללכת לקופת חולים אחר כך
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 3/21 — why_I_need_phone_yanoos_2.mp4
+Time taken: 54.01 seconds
+❌ Test failed
+Expected: ['why', 'I', 'need', 'phone']
+Received: אני צריך טלפון
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 4/21 — why_I_need_phone_yanoos_1.mp4
+Time taken: 43.72 seconds
+❌ Test failed
+Expected: ['why', 'I', 'need', 'phone']
+Received: אני צריך טלפון
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 5/21 — when_schedule_appointment_yanoos_2.mp4
+Time taken: 52.40 seconds
+❌ Test failed
+Expected: ['when', 'schedule', 'appointment']
+Received: למה לקבוע תור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 6/21 — when_schedule_appointment_yanoos_1.mp4
+Time taken: 38.55 seconds
+❌ Test failed
+Expected: ['when', 'schedule', 'appointment']
+Received: מתי לקבוע תור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 7/21 — thanks_I_no_need_ticket_yanoos_2.mp4
+Time taken: 95.63 seconds
+❌ Test failed
+Expected: ['thanks', 'I', 'no', 'need', 'ticket']
+Received: תודה צריך שם לא כרטיס
+✔️ Success: 0/5 words correct (0.0%)
+
+Test 8/21 — thanks_I_no_need_ticket_yanoos_1.mp4
+Time taken: 81.47 seconds
+❌ Test failed
+Expected: ['thanks', 'I', 'no', 'need', 'ticket']
+Received: אני צריך כרטיס תודה שם
+✔️ Success: 0/5 words correct (0.0%)
+
+Test 9/21 — hello_I_need_doctor_yanoos_1.mp4
+Time taken: 59.36 seconds
+❌ Test failed
+Expected: ['hello', 'I', 'need', 'doctor']
+Received: שלום אני צריך רופא
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 10/21 — I_go_station_bus_yanoos_2.mp4
+Time taken: 60.19 seconds
+❌ Test failed
+Expected: ['I', 'go', 'station', 'bus']
+Received: אני הולך לתחנת אוטובוס
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 11/21 — I_go_station_bus_yanoos_1.mp4
+Time taken: 64.40 seconds
+❌ Test failed
+Expected: ['I', 'go', 'station', 'bus']
+Received: אני הולך לתחנת אוטובוס
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 12/21 — when_come_ambulance_yanoos_2.mp4
+Time taken: 45.59 seconds
+❌ Test failed
+Expected: ['when', 'come', 'ambulance']
+Received: מתי ללכת עם אמבולנס לטלפון
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 13/21 — when_come_ambulance_yanoos_1.mp4
+Time taken: 61.56 seconds
+❌ Test failed
+Expected: ['when', 'come', 'ambulance']
+Received: למה ללכת עם אמבולנס טלפון
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 14/21 — I_need_go_home_yanoos_2.mp4
+Time taken: 63.02 seconds
+❌ Test failed
+Expected: ['I', 'need', 'go', 'home']
+Received: אני צריך ללכת הביתה
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 15/21 — I_need_go_home_yanoos_1.mp4
+Time taken: 81.58 seconds
+❌ Test failed
+Expected: ['I', 'need', 'go', 'home']
+Received: אני צריך אמבולנס ללכת הביתה
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 16/21 — when_come_appointment_yanoos_2.mp4
+Time taken: 53.49 seconds
+❌ Test failed
+Expected: ['when', 'come', 'appointment']
+Received: מתי ללכת לתור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 17/21 — when_come_appointment_yanoos_1.mp4
+Time taken: 61.31 seconds
+❌ Test failed
+Expected: ['when', 'come', 'appointment']
+Received: מתי ללכת לתור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 18/21 — you_need_idCard_yanoos_1.mp4
+Time taken: 59.80 seconds
+❌ Test failed
+Expected: ['you', 'need', 'idCard']
+Received: אתה צריך תעודת זהות
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 19/21 — you_need_idCard_yanoos_2.mp4
+Time taken: 66.94 seconds
+❌ Test failed
+Expected: ['you', 'need', 'idCard']
+Received: אתה צריך תעודת זהות לא
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 20/21 — I_need_doctor_yanoos_1.mp4
+Time taken: 36.39 seconds
+❌ Test failed
+Expected: ['I', 'need', 'doctor']
+Received: אני צריך רופא
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 21/21 — I_need_doctor_yanoos_2.mp4
+Time taken: 47.25 seconds
+❌ Test failed
+Expected: ['I', 'need', 'doctor']
+Received: אני צריך רופא
+✔️ Success: 0/3 words correct (0.0%)
