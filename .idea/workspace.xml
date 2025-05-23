@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c67a5bd6-3b76-4fec-9d88-cb9101b4f5ce" name="Changes" comment="I updated the translate_sentence.py file and added tests">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" beforeDir="false" afterPath="$PROJECT_DIR$/test_codes_and_files/test_sentence_translation.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -250,9 +250,9 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.test_mediapipe" />
       <item itemvalue="Python.check_videos_length" />
       <item itemvalue="Python.classify_attn" />
-      <item itemvalue="Python.test_mediapipe" />
       <item itemvalue="Python.test_sentence_translation" />
       <item itemvalue="Python.translate_sentence" />
     </list>
@@ -325,6 +325,7 @@
       <workItem from="1747603073454" duration="8217000" />
       <workItem from="1747654127907" duration="41782000" />
       <workItem from="1747903387163" duration="15111000" />
+      <workItem from="1748026643745" duration="657000" />
     </task>
     <task id="LOCAL‎-00001" summary="I updated the mp4&amp;json original folders so they will contain only the original videos&#10;I updated the create_database.py so it will use an env file&#10;I created the files gitignore &amp; requirements.txt&#10;I changed the classification.py main so the param test_original will determine if the videos&amp;json should be taken from the original videos or the new one we created.">
       <option name="closed" value="true" />
@@ -374,7 +375,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1747912510747</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL‎-00007" summary="I updated the translate_sentence.py file and added tests">
+      <option name="closed" value="true" />
+      <created>1748026977096</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL‎-00007" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1748026977096</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
