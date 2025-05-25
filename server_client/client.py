@@ -69,6 +69,7 @@ def send_video_payload(payload):
         print(f"❌ Communication error: {e}")
     finally:
         s.close()
+        return results
 
 
 ##########
