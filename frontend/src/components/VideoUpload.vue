@@ -1,12 +1,43 @@
 <template>
   <div class="video-upload">
     <h2>Upload Your Sign Language Video</h2>
-    <input 
-      type="file"
-      accept="video/*" 
-      class="file-input"
-      @change="onFileChange"
+
+    <!-- Input row: file input + mode selector -->
+    <div class="input-row">
+      <input 
+        type="file"
+        accept="video/*" 
+        class="file-input"
+        @change="onFileChange"
+      >
+
+      <div class="input-options">
+        <select 
+          id="mode"
+          v-model="mode" 
+          class="mode-select">
+          <option value="sentence">
+            Sentence
+          </option>
+          <option value="word">
+            Word
+          </option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Video preview -->
+    <div 
+      v-if="videoPreview" 
+      class="video-preview"
     >
+      <video 
+        :src="videoPreview" 
+        controls 
+        class="uploaded-video"
+      />
+    </div>
+
     <button 
       :disabled="!videoFile" 
       @click="uploadVideo" 
@@ -15,26 +46,34 @@
     </button>
   </div>
 </template>
-  
   <script>
   export default {
     name: 'VideoUpload',
-    emits: ['video-uploaded', 'reset-translation'],
+    emits: ['video-uploaded', 'reset-translation', 'start-translating'],
     data() {
       return {
         videoFile: null,
+        videoPreview: null, // For storing video preview URL
+        mode: 'sentence', // default
       };
     },
     methods: {
       onFileChange(event) {
-        this.videoFile = event.target.files[0];
-        this.$emit('reset-translation'); // Emit event to reset the translation
+        const file = event.target.files[0];
+        if (file) {
+        this.videoFile = file;
+        this.videoPreview = URL.createObjectURL(file); // Generate a preview URL for the video
+        this.$emit('reset-translation'); // Reset the translation result
+        }
       },
       async uploadVideo() {
         if (!this.videoFile) return;
+
+        this.$emit('start-translating'); // Emit event to show "Translating..."
   
         const formData = new FormData();
         formData.append('video', this.videoFile);
+        formData.append('mode', this.mode); // Optional
   
         try {
           // Replace with your backend API endpoint
@@ -56,22 +95,74 @@
   
   <style scoped>
   .video-upload {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
+    /* width: 100%;  */
+    max-width: 1000px;
+    height: auto; 
+    align-items: center;
+    /* background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
   }
+
+  h2 {
+    font-weight: 100;
+  }
+
+  .input-row {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* spacing between input and select */
+  flex-wrap: wrap; /* makes it responsive */
+  margin: 20px 0;
+  }
+
+  .file-input,
+  .mode-select {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    box-sizing: border-box;
+    height: 42px;
+  }
+  
+ .file-input {
+  flex: 1;
+  min-width: 200px;
+  }
+
 
   .file-input::file-selector-button{
     font-family: 'Montserrat', sans-serif;
   }
 
-    
+  .input-options {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  }
+
+  .mode-select {
+  min-width: 150px;
+  }
+
+  .video-preview {
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+
+ .uploaded-video {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  }
+
   .video-upload input {
     display: block;
-    margin: 20px 0;
     padding: 10px;
     width: 96.5%;
     border: 1px solid #ccc;
@@ -104,20 +195,22 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-bottom: 30px;
   }
 
   .video-upload button:hover {
     background-color: #ff4a4a;
-    transform: scale(1.02);
   }
 
   .video-upload button:disabled {
-    background-color: #d3d3d3; /* Light gray to indicate disabled state */
-    color: #a0a0a0; /* Dimmed text color for clarity */
+    /* background-color: #d3d3d3; 
+    color: #a0a0a0; 
     cursor: not-allowed;
-    transform: none; /* Remove hover effects */
-    box-shadow: none; /* Remove any shadow to make it look flat */
-    opacity: 0.7; /* Slightly reduce opacity for a disabled effect */
+    transform: none;
+    box-shadow: none; 
+    opacity: 0.7;  */
+    background-color: #ccc;
+    cursor: not-allowed;
   }
 
   </style>

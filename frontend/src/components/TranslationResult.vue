@@ -19,7 +19,7 @@
   
   <style scoped>
   .translation-result {
-    max-width: 600px;
+    max-width: 300px;
     margin: 10px auto;
   }
 
@@ -38,9 +38,8 @@
   }
   
   .translation-result h2 {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: black;
-    margin-top: 40px;
   }
   
   .translation-result p {
@@ -49,6 +48,7 @@
     color: #333;
     word-wrap: break-word;
     margin-top: -10px;
+    font-family: "Gisha", "Arial", "Helvetica", sans-serif;
   }
   
   </style>

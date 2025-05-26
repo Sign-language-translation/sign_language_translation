@@ -80,7 +80,6 @@ def segment_video_with_opencv(duration, output_folder, cap, fps):
     cap.release()
     return segments
 
-
 def process_segments_with_threads(video_path, model_path, label_encoder_path):
     temp_folder = tempfile.mkdtemp()
     cap = cv2.VideoCapture(video_path)
@@ -245,9 +244,7 @@ def call_gpt(message, client, deployment):
         temperature=0.7,
         max_tokens=256
     )
-    #
-    # result = completion.choices[0].message.content
-    # return [word.strip() for word in result.split("\n") if word.strip()]
+
     return completion.choices[0].message.content.strip()
 
 def consolidate_answers(answers, client, deployment):
