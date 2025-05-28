@@ -71,6 +71,7 @@ export default {
         // console.log("✅ Backend response:", data);
 
         this.resultVideoUrl = data.video_url; // Assuming backend returns { video_url: "..." }
+        console.log(this.resultVideoUrl)
 
       } catch (error) {
         console.error("❌ Error fetching video:", error);

@@ -3,6 +3,7 @@ from flask_cors import CORS
 import sys
 import os
 import uuid
+from openai import AzureOpenAI
 from werkzeug.utils import secure_filename
 from moviepy.editor import VideoFileClip, concatenate_videoclips
 from flask import url_for
@@ -30,6 +31,51 @@ VIDEO_FOLDER = 'videos'
 
 # Allowed file extensions
 ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
+AZURE_OPENAI_API_KEY= os.getenv("AZURE_OPENAI_API_KEY")
+
+def convert_sentence_to_list_of_existing_words_using_gpt(sentence):
+    endpoint = os.getenv("ENDPOINT_URL", "https://isl-translation.openai.azure.com/")
+    deployment = os.getenv("DEPLOYMENT_NAME", "gpt-4o")
+    subscription_key = os.getenv("AZURE_OPENAI_API_KEY", AZURE_OPENAI_API_KEY)
+
+    client = AzureOpenAI(
+        azure_endpoint=endpoint,
+        api_key=subscription_key,
+        api_version="2024-05-01-preview",
+    )
+
+    prompt = f"""
+    Given the following sentence in Hebrew:
+
+    "{sentence}"
+
+    And a list of existing Hebrew words:
+    "שלום", "תודה", "צריך", "עכשיו", "מתי", "למה", "תור", "לקבוע", "להגיע", "תחנה", "אוטובוס", "טלפון", "מקום", "לעזור", "שם", "לא", "ללכת", "לבוא", "אני", "אתה", "בית", "כרטיס", "אחר כך", "רופא", "תעודת זהות", "אמבולנס", "קופת חולים", "רוצה"
+
+    Your task is to convert the sentence into a space-separated list of the most similar words from the list. You may change or simplify each word in the sentence to match its closest equivalent in the list — for example:
+
+    - Convert conjugated, inflected, or gendered forms to their base form in the list  
+    e.g. 'צריכה' → 'צריך', 'ארצה' or 'רציתי' → 'רוצה'
+
+    - Remove prefixes such as 'ב', 'ל', 'כ', 'ש', 'ה', and match the core word  
+    e.g. 'לתחנת' → 'תחנה', 'באוטובוס' → 'אוטובוס'
+
+    Your output must be a single line with space-separated words from the list, in the same order as the original sentence.
+
+    Return only the final list. Do not include explanations.
+    """
+
+    chat_prompt = [{"role": "user", "content": [{"type": "text", "text": prompt}]}]
+
+    completion = client.chat.completions.create(
+        model=deployment,
+        messages=chat_prompt,
+        temperature=0.7,
+        max_tokens=256
+    )
+
+    # return completion.choices[0].message.content.strip()
+    return completion.choices[0].message.content
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -98,6 +144,8 @@ def generate_video():
 
         if not text.strip():
             return jsonify({"error": "No text provided"}), 400
+        
+        text = convert_sentence_to_list_of_existing_words_using_gpt(text)
 
         # Format filename from text
         safe_filename = text.strip().lower().replace(" ", "_") + ".mp4"
@@ -146,12 +194,15 @@ def generate_video():
 
         # return send_file(output_path, as_attachment=True)
         video_url = url_for('static', filename=f"generated_videos/{safe_filename}", _external=True)
+        print(video_url)
 
         return jsonify({ "video_url": video_url })
 
     except Exception as e:
         print("❌ Error during video generation:", e)
         return jsonify({"error": str(e)}), 500
+
+
 
 if __name__ == '__main__':
     app.run(port=3000, debug=True)

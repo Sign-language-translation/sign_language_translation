@@ -2,19 +2,38 @@
   <div class="text-input">
     <h2>Enter Text to Translate to Sign Language</h2>
   
-    <input 
-      v-model="inputText" 
-      type="text" 
-      placeholder="Type a sentence..." 
-      class="text-field"
-    >
-  
-    <button 
-      :disabled="!inputText.trim() || isLoading" 
-      @click="submitText"
-    >
-      Generate Video
-    </button>
+    <div class="input-row">
+      <div class="input-wrapper">
+        <input 
+          v-model="inputText" 
+          type="text" 
+          placeholder="Type or speak..." 
+          class="text-field"
+        >
+        <button 
+          class="mic-btn" 
+          :disabled="isLoading"
+          :title="isRecording ? 'Stop recording' : 'Start recording'"
+          @click="toggleRecording" 
+        >
+          <img 
+            :src="microphoneIcon" 
+            alt="Microphone" 
+            class="mic-icon" 
+            :class="{ recording: isRecording }" 
+          >
+        </button>
+      </div>
+    
+      <button 
+        class="generate-btn"
+        :disabled="!inputText.trim() || isLoading" 
+        @click="submitText"
+      >
+        Generate Video
+      </button>
+    </div>
+
   
     <div 
       v-if="isLoading" 
@@ -35,6 +54,8 @@
 </template>
   
   <script>
+  import microphoneIcon from '@/assets/microphone.png'
+
   export default {
     name: 'TextInput',
     props: {
@@ -45,8 +66,37 @@
       return {
         inputText: '',
         submittedText: '',
+        isRecording: false,
+        recognition: null,
+        microphoneIcon,
       };
     },
+    mounted() {
+    // Initialize speech recognition (Hebrew)
+    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (SpeechRecognition) {
+      this.recognition = new SpeechRecognition();
+      this.recognition.lang = 'he-IL';
+      this.recognition.interimResults = false;
+      this.recognition.maxAlternatives = 1;
+
+      this.recognition.onresult = (event) => {
+        const transcript = event.results[0][0].transcript;
+        this.inputText = transcript;
+      };
+
+      this.recognition.onerror = (event) => {
+        console.error('Speech recognition error:', event.error);
+        this.isRecording = false;
+      };
+
+      this.recognition.onend = () => {
+        this.isRecording = false;
+      };
+    } else {
+      alert('Speech Recognition is not supported in this browser.');
+    }
+  },
     methods: {
       submitText() {
         this.submittedText = this.inputText.trim();
@@ -58,7 +108,17 @@
         // setTimeout(() => {
         //   this.isLoading = false;
         // }, 3000); // e.g., 3 seconds
+      },
+      toggleRecording() {
+      if (!this.recognition) return;
+      if (this.isRecording) {
+        this.recognition.stop();
+        this.isRecording = false;
+      } else {
+        this.recognition.start();
+        this.isRecording = true;
       }
+     }
     }
   };
   </script>
@@ -73,7 +133,7 @@
     align-items: center;
   }
   
-  .text-field {
+  /* .text-field {
     width: 90%;
     max-width: 700px;
     padding: 12px;
@@ -82,11 +142,76 @@
     border: 1px solid #ccc;
     border-radius: 6px;
     margin-right: 10px;
-    /* font-family: 'Montserrat', sans-serif; */
+
     font-family: "Gisha", "Arial", "Helvetica", sans-serif;
-  }
+  } */
+
+  .input-row {
+  display: flex;
+  align-items: center;
+  gap: 15px; /* space between input-wrapper and button */
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 15px;
+  margin-left: 10px;
   
-  button {
+}
+  .input-wrapper {
+  position: relative;
+  flex-grow: 1;
+  width: 90%;
+  max-width: 700px;
+  margin-bottom: 15px;
+  padding: 12px;
+  margin-right: 50px;
+}
+
+.text-field {
+  width: 100%;
+  padding: 12px 40px 12px 12px; /* padding-right for icon space */
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: "Gisha", "Arial", "Helvetica", sans-serif;
+}
+
+.mic-btn {
+  position: absolute;
+  right: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+/* .mic-btn span.recording {
+  color: red;
+  animation: pulse 1s infinite;
+} */
+
+.mic-icon {
+  width: 24px;
+  height: 24px;
+  filter: grayscale(100%);
+  transition: filter 0.3s ease;
+}
+
+.mic-icon.recording {
+  filter: none;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+  
+  .generate-btn {
+    white-space: nowrap;
     background-color: #ff6b6b;
     color: white;
     padding: 12px 24px;
@@ -96,14 +221,15 @@
     cursor: pointer;
     transition: 0.3s ease;
     font-family: 'Montserrat', sans-serif;
+    margin-bottom: 15px;
   }
   
-  button:disabled {
+  .generate-btn button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
   }
   
-  button:hover:enabled {
+  .generate-btn button:hover:enabled {
     background-color: #ff4a4a;
   }
   
@@ -168,5 +294,21 @@
     color: #333;
     font-family: "Gisha", "Arial", "Helvetica", sans-serif;
   }
+
+  .record-btn {
+  background-color: #6c63ff;
+  color: white;
+  padding: 12px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.record-btn:hover:enabled {
+  background-color: #4b44e0;
+}
   </style>
   
