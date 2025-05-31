@@ -7,7 +7,7 @@ from utils.trim_sign_language_dead_time import detect_motion_and_trim
 
 # Global configuration
 video_folder = "resources/sign_language_videos/"
-json_folder = "resources/motion_data_old/"
+json_folder = "resources/motion_data/"
 output_folder = "resources/generated_videos/"
 
 
@@ -107,6 +107,7 @@ def motion_data_to_json(frames_data, video_name, folder_name, log_folder_path=No
 
     # Save motion data to a file
     json_path = os.path.join(folder_name, video_name + ".json")
+    json_path = json_path.replace("\\", "/")
     with open(json_path, "w") as f:
         json.dump(frames_data, f)
 
@@ -273,19 +274,21 @@ def save_visualization_as_video(video_name):
 #
 #     # visualize_as_stick_figure(video_name)
 
+existing_words = ["help"]
 
-def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data_old"):
+def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data"):
     # Iterate through all files in the given folder
     for file_name in os.listdir(folder_name):
         # Check if the file is a video file (e.g., .mp4, .avi, etc.)
-        if file_name.endswith(('.mp4', '.avi', '.mov', '.mkv')):  # Adjust extensions as needed
-            # Remove the file extension to get the video name
-            video_name = os.path.splitext(file_name)[0]
+        if file_name.endswith(('.mp4', '.avi', '.mov', '.mkv')):
+            if any(file_name.startswith(word + "_") for word in existing_words):
+                # Remove the file extension to get the video name
+                video_name = os.path.splitext(file_name)[0]
 
-            # Extract motion data from the video
-            trim_data = extract_motion_data(video_name)
-            motion_data_to_json(trim_data, video_name, output_folder_path)
+                # Extract motion data from the video
+                trim_data = extract_motion_data(video_name, folder_name = folder_name)
+                motion_data_to_json(trim_data, video_name, output_folder_path)
 
 if __name__ == "__main__":
-    create_original_motion_data("/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old","/Users/raananpevzner/try/sign_language_translation/test_codes_and_files/single_word_videos/our_videos_NOT_TRAINED/test_lena")
+    create_original_motion_data(folder_name = "resources/generated_videos", output_folder_path = "resources/original_motion_data")
 

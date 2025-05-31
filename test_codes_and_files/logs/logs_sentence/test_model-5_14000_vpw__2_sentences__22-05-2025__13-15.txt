@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/2 — when_come_clinic_raanan.mp4
+Time taken: 88.89 seconds
+Expected: מתי לבוא לקופת חולים
+Received: מתי אתה צריך לבוא הביתה עם אוטובוס למקום
+Semantic Similarity: 65.0%
+
+Test 2/2 — I_place_station_bus_raanan.mp4
+Time taken: 97.02 seconds
+Expected: אני במקום תחנת אוטובוס
+Received: אני צריך ללכת אל תחנת האוטובוס
+Semantic Similarity: 65.0%
+
+Statistical summary of test results:
+Total number of tests: 2
+Tests with perfect similarity (100%): 0
+Average similarity score: 65.0%
+Tests with similarity score 90% or higher: 0
+Tests with similarity score below 70%: 2
+Minimum similarity score: 65.0%
+Maximum similarity score: 65.0%

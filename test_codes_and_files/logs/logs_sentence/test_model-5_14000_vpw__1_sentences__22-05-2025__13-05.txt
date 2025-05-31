@@ -1,0 +1,17 @@
+
+=== Test Summary ===
+
+Test 1/1 — when_come_clinic_lena.mp4
+Time taken: 59.14 seconds
+Expected: מתי לבוא לקופת חולים
+Received: מתי לבוא לרופא
+Semantic Similarity: 85.0%
+
+Statistical summary of test results:
+Total number of tests: 1
+Tests with perfect similarity (100%): 0
+Average similarity score: 85.0%
+Tests with similarity score 90% or higher: 0
+Tests with similarity score below 70%: 0
+Minimum similarity score: 85.0%
+Maximum similarity score: 85.0%

@@ -9,7 +9,8 @@ import tempfile
 # from codes_translation.translate_single_word import load_label_mapping, classify_json_file
 from utils.test_mediapipe import extract_motion_data
 import numpy as np
-from models.local_models.classify_attn import load_label_mapping, classify_json_file
+from test_codes_and_files.classify_attn import load_label_mapping, classify_json_file
+
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -21,7 +22,6 @@ START_TIME_STEP_SEC = 0.15
 WINDOW_SIZE_STEP_SEC = 1
 AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
 AMOUNT_OF_GPT_CALLS = 5
-
 
 def create_segments_list(video_duration):
     segments_list = []
@@ -43,7 +43,6 @@ def create_segments_list(video_duration):
             segments_list.append((start_sec, end_sec))
 
     return segments_list
-
 
 def segment_video_with_opencv(duration, output_folder, cap, fps):
     segments = []
@@ -80,7 +79,6 @@ def segment_video_with_opencv(duration, output_folder, cap, fps):
 
     cap.release()
     return segments
-
 
 def process_segments_with_threads(video_path, model_path, label_encoder_path):
     temp_folder = tempfile.mkdtemp()
@@ -143,7 +141,6 @@ def process_segments_with_threads(video_path, model_path, label_encoder_path):
 
     return sorted_predictions, duration
 
-
 def build_prompt1(classification_text, estimated_word_count, video_duration):
     prompt = f"""
         You are analyzing a sign language video.
@@ -169,7 +166,6 @@ def build_prompt1(classification_text, estimated_word_count, video_duration):
 
     return prompt
 
-
 def build_prompt2(classification_text, estimated_word_count, video_duration):
     prompt = f"""
        You are analyzing a sign language video.
@@ -194,7 +190,6 @@ def build_prompt2(classification_text, estimated_word_count, video_duration):
 
     return prompt
 
-
 def build_prompt3(classification_text, estimated_word_count):
     prompt = f"""
     You are given a list of time-aligned classifications, each representing a possible word spoken between specific time intervals in seconds.
@@ -214,15 +209,14 @@ def build_prompt3(classification_text, estimated_word_count):
 
     return prompt
 
-
 def build_prompt4_summarize(prompt1_words, prompt2_words, prompt3_words):
     prompt = f"""
     You are given three lists of words from a sign language video analysis.
-
+    
     List 1: {', '.join(prompt1_words)}
     List 2: {', '.join(prompt2_words)}
     List 3: {', '.join(prompt3_words)}
-
+    
     Your task:
     - Choose a final list of words combining the most likely ones from all lists, the sentence should make sense.
     - Translate the chosen words into **Hebrew** using this dictionary:
@@ -231,7 +225,7 @@ def build_prompt4_summarize(prompt1_words, prompt2_words, prompt3_words):
     help: לעזור, name: שם, no: לא, go: ללכת, come: לבוא, I: אני, you: אתה, home: בית,
     ticket: כרטיס, later: אחר כך, doctor: רופא, idCard: תעודת זהות, ambulance: אמבולנס,
     clinic: קופת חולים
-
+    
     - Add appropriate Hebrew **linking words** (e.g., ל, עם, ב, מ, אל) to make a fluent and grammatically correct sentence.
     - Only use words from the dictionary and those provided.
     - No hallucinations, no extra words.
@@ -239,7 +233,6 @@ def build_prompt4_summarize(prompt1_words, prompt2_words, prompt3_words):
     """
 
     return prompt
-
 
 def call_gpt(message, client, deployment):
     chat_prompt = [{"role": "user", "content": [{"type": "text", "text": message}]}]
@@ -251,14 +244,11 @@ def call_gpt(message, client, deployment):
         temperature=0.7,
         max_tokens=256
     )
-    #
-    # result = completion.choices[0].message.content
-    # return [word.strip() for word in result.split("\n") if word.strip()]
+
     return completion.choices[0].message.content.strip()
 
-
 def consolidate_answers(answers, client, deployment):
-    joined_answers = "\n".join(f"Answer {i + 1}: {', '.join(ans)}" for i, ans in enumerate(answers))
+    joined_answers = "\n".join(f"Answer {i+1}: {', '.join(ans)}" for i, ans in enumerate(answers))
 
     # final_prompt = f"""
     # You are given 5 different GPT responses that each analyzed a sign language video. Your task is to consolidate them into a single final list of signed words.
@@ -292,15 +282,10 @@ def consolidate_answers(answers, client, deployment):
 
     return call_gpt(final_prompt, client, deployment)
 
-
-def get_sentence_translation_from_gpt(client, azure_deployment, predictions, segments_list, video_duration):
-    # classification_text = "\n".join(
-    #     f"{round(start, 1)}-{round(end, 1)}s → {pred or 'UNKNOWN'}"
-    #     for start, end, pred in predictions
-    # )
+def get_sentence_translation_from_gpt(client, azure_deployment, predictions, video_duration):
     classification_text = "\n".join(
         f"{round(start, 1)}-{round(end, 1)}s → {pred or 'UNKNOWN'}"
-        for (start, end), pred in zip(segments_list, predictions)
+        for start, end, pred in predictions
     )
     estimated_word_count = round(video_duration / ((MIN_WINDOW_SEC + MAX_WINDOW_SEC) / 2))
 
@@ -330,8 +315,8 @@ def get_sentence_translation_from_gpt(client, azure_deployment, predictions, seg
 
     return final_sentence
 
+def summarize_predictions_gpt(predictions, video_duration):
 
-def summarize_predictions_gpt(predictions, segments_list, video_duration):
     endpoint = os.getenv("ENDPOINT_URL", "https://isl-translation.openai.azure.com/")
     deployment = os.getenv("DEPLOYMENT_NAME", "gpt-4o")
     subscription_key = os.getenv("AZURE_OPENAI_API_KEY", AZURE_OPENAI_API_KEY)
@@ -363,7 +348,7 @@ def summarize_predictions_gpt(predictions, segments_list, video_duration):
 
     with ThreadPoolExecutor(max_workers=AMOUNT_OF_GPT_CALLS) as executor:
         futures = {
-            executor.submit(get_sentence_translation_from_gpt, client, deployment, predictions, segments_list, video_duration): i
+            executor.submit(get_sentence_translation_from_gpt, client, deployment, predictions, video_duration): i
             for i in range(AMOUNT_OF_GPT_CALLS)
         }
 
@@ -386,17 +371,11 @@ def summarize_predictions_gpt(predictions, segments_list, video_duration):
 
     return final_answer
 
-
-
-from server_client.client import prepare_video_payload, send_video_payload, get_video_duration
 def translate_video_to_text(video_path, model_path, label_encoder_path):
-    # predictions, video_duration = process_segments_with_threads(video_path, model_path, label_encoder_path)
-    video_duration = get_video_duration(video_path)
-    segments_list = create_segments_list(video_duration)
-    payload = prepare_video_payload(video_path, segments_list)
-    predictions = send_video_payload(payload)
+    predictions, video_duration = process_segments_with_threads(video_path, model_path, label_encoder_path)
+
     # start_time = time.time()
-    translation_text = summarize_predictions_gpt(predictions, segments_list, video_duration)
+    translation_text = summarize_predictions_gpt(predictions, video_duration)
     # elapsed_time = time.time() - start_time
 
     # print(f"summarize_predictions_gpt took {elapsed_time} seconds")

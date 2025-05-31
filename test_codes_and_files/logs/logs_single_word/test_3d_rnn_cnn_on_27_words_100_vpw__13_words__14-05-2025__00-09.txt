@@ -1,0 +1,70 @@
+
+=== Single Word Test Summary ===
+
+Test 1/13 — bus_from_drive_1.mp4
+Time taken: 20.51 seconds
+❌ Test failed
+Expected: bus
+Received: clinic
+
+Test 2/13 — bus_from_drive_2.mp4
+Time taken: 18.46 seconds
+❌ Test failed
+Expected: bus
+Received: help
+
+Test 3/13 — come_7.mp4
+Time taken: 8.97 seconds
+❌ Test failed
+Expected: come
+Received: home
+
+Test 4/13 — go_7.mp4
+Time taken: 7.87 seconds
+❌ Test failed
+Expected: go
+Received: you
+
+Test 5/13 — go_8.mp4
+Time taken: 10.02 seconds
+❌ Test failed
+Expected: go
+Received: you
+
+Test 6/13 — I_5.mp4
+Time taken: 9.14 seconds
+❌ Test failed
+Expected: I
+Received: phone
+
+Test 7/13 — I_6.mp4
+Time taken: 8.89 seconds
+✅ Test passed
+
+Test 8/13 — no_7.mp4
+Time taken: 8.52 seconds
+❌ Test failed
+Expected: no
+Received: thanks
+
+Test 9/13 — phone_from_drive_1.mp4
+Time taken: 16.78 seconds
+✅ Test passed
+
+Test 10/13 — when_3.mp4
+Time taken: 2.79 seconds
+✅ Test passed
+
+Test 11/13 — when_6.mp4
+Time taken: 2.57 seconds
+✅ Test passed
+
+Test 12/13 — you_2.mp4
+Time taken: 2.73 seconds
+✅ Test passed
+
+Test 13/13 — you_3.mp4
+Time taken: 3.75 seconds
+✅ Test passed
+
+=== Conclusion: 6/13 tests passed (46.2%) ===

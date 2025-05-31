@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/2 — I_need_doctor_yael_1.mp4
+Time taken: 67.08 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 2/2 — I_need_doctor_yael_2.mp4
+Time taken: 54.95 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Statistical summary of test results:
+Total number of tests: 2
+Tests with perfect similarity (100%): 2
+Average similarity score: 100.0%
+Tests with similarity score 90% or higher: 2
+Tests with similarity score below 70%: 0
+Minimum similarity score: 100.0%
+Maximum similarity score: 100.0%

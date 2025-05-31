@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/3 — I_go_station_bus_yanoos_1.mp4
+Time taken: 75.76 seconds
+❌ Test failed
+Expected: ['I', 'go', 'station', 'bus']
+Received: ['אני', 'הולך', 'לרופא', 'באוטובוס']
+✔️ Success: 0/4 words correct (0.0%)
+
+Test 2/3 — you_need_idCard_yanoos_1.mp4
+Time taken: 72.88 seconds
+❌ Test failed
+Expected: ['you', 'need', 'idCard']
+Received: ['אני', 'צריך', 'תעודת', 'זהות']
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 3/3 — I_need_doctor_yanoos_1.mp4
+Time taken: 47.27 seconds
+❌ Test failed
+Expected: ['I', 'need', 'doctor']
+Received: ['אני', 'צריך', 'רופא', 'ואמבולנס', 'עכשיו']
+✔️ Success: 0/3 words correct (0.0%)

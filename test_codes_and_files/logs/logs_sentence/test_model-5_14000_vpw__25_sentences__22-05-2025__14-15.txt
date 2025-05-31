@@ -1,0 +1,161 @@
+
+=== Test Summary ===
+
+Test 1/25 — I_arrive_clinic_later_yanoos_2.mp4
+Time taken: 92.41 seconds
+Expected: אני אגיע לקופת חולים אחר כך
+Received: אני הולך לקופת חולים אחר כך
+Semantic Similarity: 97.0%
+
+Test 2/25 — I_arrive_clinic_later_yanoos_1.mp4
+Time taken: 91.84 seconds
+Expected: אני אגיע לקופת חולים אחר כך
+Received: אני שם ללקת לקופת חולים אחר כך
+Semantic Similarity: 95.0%
+
+Test 3/25 — why_I_need_phone_yanoos_2.mp4
+Time taken: 52.66 seconds
+Expected: למה אני צריך טלפון
+Received: אני צריך טלפון
+Semantic Similarity: 85.0%
+
+Test 4/25 — why_I_need_phone_yanoos_1.mp4
+Time taken: 46.68 seconds
+Expected: למה אני צריך טלפון
+Received: אני צריך טלפון
+Semantic Similarity: 85.0%
+
+Test 5/25 — when_schedule_appointment_yanoos_2.mp4
+Time taken: 47.43 seconds
+Expected: מתי לקבוע תור
+Received: למה לקבוע תור
+Semantic Similarity: 85.0%
+
+Test 6/25 — when_schedule_appointment_yanoos_1.mp4
+Time taken: 34.13 seconds
+Expected: מתי לקבוע תור
+Received: מתי לקבוע תור
+Semantic Similarity: 100.0%
+
+Test 7/25 — thanks_I_no_need_ticket_yanoos_2.mp4
+Time taken: 95.19 seconds
+Expected: תודה אני לא צריך כרטיס
+Received: תודה צריך כרטיס עם שם
+Semantic Similarity: 62.0%
+
+Test 8/25 — thanks_I_no_need_ticket_yanoos_1.mp4
+Time taken: 83.05 seconds
+Expected: תודה אני לא צריך כרטיס
+Received: אני צריך כרטיס תודה
+Semantic Similarity: 45.0%
+
+Test 9/25 — hello_I_need_doctor_yanoos_1.mp4
+Time taken: 59.18 seconds
+Expected: שלום אני צריך רופא
+Received: שלום אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 10/25 — I_go_station_bus_yanoos_2.mp4
+Time taken: 61.43 seconds
+Expected: אני הולך לתחנת אוטובוס
+Received: אני צריך ללכת לתחנה עם אוטובוס
+Semantic Similarity: 85.0%
+
+Test 11/25 — I_go_station_bus_yanoos_1.mp4
+Time taken: 71.52 seconds
+Expected: אני הולך לתחנת אוטובוס
+Received: אני הולך לתחנת האוטובוס
+Semantic Similarity: 99.0%
+
+Test 12/25 — when_come_ambulance_yanoos_2.mp4
+Time taken: 57.20 seconds
+Expected: מתי יגיע האמבולנס
+Received: מתי ללכת הביתה עם אמבולנס
+Semantic Similarity: 73.0%
+
+Test 13/25 — when_come_ambulance_yanoos_1.mp4
+Time taken: 74.57 seconds
+Expected: מתי יגיע האמבולנס
+Received: למה ללכת עם אמבולנס
+Semantic Similarity: 25.0%
+
+Test 14/25 — I_need_go_home_yanoos_2.mp4
+Time taken: 66.13 seconds
+Expected: אני צריך ללכת הביתה
+Received: אני צריך ללכת הביתה
+Semantic Similarity: 100.0%
+
+Test 15/25 — I_need_go_home_yanoos_1.mp4
+Time taken: 83.01 seconds
+Expected: אני צריך ללכת הביתה
+Received: אני צריך אמבולנס ללכת הביתה
+Semantic Similarity: 65.0%
+
+Test 16/25 — when_come_appointment_yanoos_2.mp4
+Time taken: 55.07 seconds
+Expected: מתי יבוא התור
+Received: מתי ללכת לתור
+Semantic Similarity: 85.0%
+
+Test 17/25 — when_come_appointment_yanoos_1.mp4
+Time taken: 62.08 seconds
+Expected: מתי יבוא התור
+Received: מתי ללכת לתור
+Semantic Similarity: 85.0%
+
+Test 18/25 — you_need_idCard_yanoos_1.mp4
+Time taken: 63.68 seconds
+Expected: אתה צריך תעודת זהות
+Received: אתה צריך תעודת זהות
+Semantic Similarity: 100.0%
+
+Test 19/25 — you_need_idCard_yanoos_2.mp4
+Time taken: 69.72 seconds
+Expected: אתה צריך תעודת זהות
+Received: אתה צריך תעודת זהות לא
+Semantic Similarity: 90.0%
+
+Test 20/25 — I_need_doctor_yanoos_1.mp4
+Time taken: 37.58 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 21/25 — I_need_doctor_yanoos_2.mp4
+Time taken: 44.54 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 22/25 — I_need_doctor_yael_1.mp4
+Time taken: 73.82 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 23/25 — I_need_doctor_yael_2.mp4
+Time taken: 64.50 seconds
+Expected: אני צריך רופא
+Received: אני צריך רופא
+Semantic Similarity: 100.0%
+
+Test 24/25 — I_need_schedule_appointment_yael.mp4
+Time taken: 82.40 seconds
+Expected: אני צריך לקבוע תור
+Received: אני צריך לקבוע תור עכשיו
+Semantic Similarity: 95.0%
+
+Test 25/25 — I_need_schedule_appointment_lena.mp4
+Time taken: 72.71 seconds
+Expected: אני צריך לקבוע תור
+Received: אני צריך לקבוע תור
+Semantic Similarity: 100.0%
+
+Statistical summary of test results:
+Total number of tests: 25
+Tests with perfect similarity (100%): 9
+Average similarity score: 86.2%
+Tests with similarity score 90% or higher: 14
+Tests with similarity score below 70%: 4
+Minimum similarity score: 25.0%
+Maximum similarity score: 100.0%

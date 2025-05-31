@@ -1,0 +1,35 @@
+
+=== Test Summary ===
+
+Test 1/4 — I_need_schedule_appointment_doctor_yanoos.mp4
+Time taken: 192.19 seconds
+Expected: אני צריך לקבוע תור לרופא
+Received: אני צריך אמבולנס עם רופא תודה
+Semantic Similarity: 45.0%
+
+Test 2/4 — I_need_schedule_appointment_doctor_lena.mp4
+Time taken: 139.35 seconds
+Expected: אני צריך לקבוע תור לרופא
+Received: אני שם אמבולנס לקבוע תור לרופא
+Semantic Similarity: 62.0%
+
+Test 3/4 — when_come_clinic_yanoos.mp4
+Time taken: 125.83 seconds
+Expected: מתי לבוא לקופת חולים
+Received: מתי האוטובוס מגיע לתחנה במקום
+Semantic Similarity: 45.0%
+
+Test 4/4 — when_come_clinic_lena.mp4
+Time taken: 65.83 seconds
+Expected: מתי לבוא לקופת חולים
+Received: מתי להגיע לתחנה עם רופא
+Semantic Similarity: 85.0%
+
+Statistical summary of test results:
+Total number of tests: 4
+Tests with perfect similarity (100%): 0
+Average similarity score: 59.2%
+Tests with similarity score 90% or higher: 0
+Tests with similarity score below 70%: 3
+Minimum similarity score: 45.0%
+Maximum similarity score: 85.0%

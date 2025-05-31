@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/2 — I_need_schedule_appointment_yael.mp4
+Time taken: 64.75 seconds
+Expected: אני צריך לקבוע תור
+Received: אני צריך לקבוע תור עקשיו
+Semantic Similarity: 90.0%
+
+Test 2/2 — I_need_schedule_appointment_lena.mp4
+Time taken: 60.11 seconds
+Expected: אני צריך לקבוע תור
+Received: אני צריך לקבוע תור
+Semantic Similarity: 100.0%
+
+Statistical summary of test results:
+Total number of tests: 2
+Tests with perfect similarity (100%): 1
+Average similarity score: 95.0%
+Tests with similarity score 90% or higher: 2
+Tests with similarity score below 70%: 0
+Minimum similarity score: 90.0%
+Maximum similarity score: 100.0%

@@ -1,0 +1,23 @@
+
+=== Test Summary ===
+
+Test 1/3 — when_schedule_appointment_yanoos_2.mp4
+Time taken: 49.37 seconds
+❌ Test failed
+Expected: ['when', 'schedule', 'appointment']
+Received: למה לקבוע תור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 2/3 — when_schedule_appointment_yanoos_1.mp4
+Time taken: 35.80 seconds
+❌ Test failed
+Expected: ['when', 'schedule', 'appointment']
+Received: מתי לקבוע תור
+✔️ Success: 0/3 words correct (0.0%)
+
+Test 3/3 — you_need_idCard_yanoos_2.mp4
+Time taken: 55.92 seconds
+❌ Test failed
+Expected: ['you', 'need', 'idCard']
+Received: אתה צריך תעודת זהות לא
+✔️ Success: 0/3 words correct (0.0%)
