@@ -60,9 +60,11 @@ from models.local_models.classify_attn import classify_json_file
 
 app = Flask(__name__)
 
-MODEL_PATH = "../models/best_so_far/model 5/model-5_14000_vpw.keras"
-ENCODER_PATH = "../models/best_so_far/model 5/label_encoder_model-5_14000_vpw.pkl"
-
+# MODEL_PATH = "../models/model-5_14000_vpw.keras"
+# ENCODER_PATH = "../models/label_encoder_model-5_14000_vpw.pkl"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+MODEL_PATH = os.path.join(BASE_DIR, "../models/model-5_14000_vpw.keras")
+ENCODER_PATH = os.path.join(BASE_DIR, "../models/label_encoder_model-5_14000_vpw.pkl")
 
 
 # @app.route('/predict', methods=['POST'])
