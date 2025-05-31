@@ -138,7 +138,7 @@ def pose_to_mediapipe_json(pose, output_file):
 
 def generate_augmented_json_files(input_folder, number_of_versions):
     """Generates augmented JSON files for all poses in the input folder."""
-    output_folder = "pose_format_augmentation"
+    output_folder = "/Users/raananpevzner/try/sign_language_translation/resources/generated_motion_data"
     os.makedirs(output_folder, exist_ok=True)
 
     for file_name in os.listdir(input_folder):
@@ -159,9 +159,9 @@ def generate_augmented_json_files(input_folder, number_of_versions):
 
 # Example usage
 if __name__ == "__main__":
-    input_folder = "test_videos/yanoos_json"  # Replace with your input folder path
-    number_of_versions = 10  # Number of augmented versions to generate per file
+    input_folder = "/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old"  # Replace with your input folder path
+    number_of_versions = 30  # Number of augmented versions to generate per file
     generate_augmented_json_files(input_folder, number_of_versions)
-    # p = mediapipe_json_to_pose_file("motion_data/sister.json")
+    # p = mediapipe_json_to_pose_file("motion_data_old/sister.json")
     #
     # visualize_pose(p)

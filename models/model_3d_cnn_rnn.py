@@ -16,12 +16,8 @@ from sklearn.utils.class_weight import compute_class_weight
 import matplotlib.pyplot as plt
 from tensorflow.keras.layers import Conv2D, MaxPooling2D
 import pickle
-import numpy as np
-from sklearn.metrics import classification_report
-import io
-import sys
-from datetime import datetime
-import os
+import matplotlib
+matplotlib.use('Agg')
 
 
 def save_label_mapping(label_encoder, file_path):
@@ -100,9 +96,9 @@ def train_model(model, X_train, y_train, class_weights):
 
     history = model.fit(
         X_train, y_train,
-        validation_split=0.2,
-        epochs=50,
-        batch_size=32,
+        validation_split=0.3,
+        epochs=200,
+        batch_size=64,
         class_weight=class_weights,
         callbacks=callbacks
     )
@@ -129,60 +125,16 @@ def train_model(model, X_train, y_train, class_weights):
     plt.legend()
 
     plt.tight_layout()
-    plt.show()
-
+    plt.savefig(f"models/local_models/training_history.png")
     return history
 
-# def evaluate_model(model, X_test, y_test, label_encoder):
-#     test_loss, test_accuracy = model.evaluate(X_test, y_test)
-#     print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
-#
-#     y_pred = np.argmax(model.predict(X_test), axis=-1)
-#     print("\nClassification Report:")
-#     print(classification_report(y_test, y_pred, target_names=label_encoder.classes_))
-
 def evaluate_model(model, X_test, y_test, label_encoder):
-    # Create log directory inside models/
-    log_dir = os.path.join("models", "logs")
-    os.makedirs(log_dir, exist_ok=True)
+    test_loss, test_accuracy = model.evaluate(X_test, y_test)
+    print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
 
-    # Create timestamped log filename
-    timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
-    log_file_path = os.path.join(log_dir, f"model_evaluation_log_{timestamp}.txt")
-
-    # Capture printed output
-    buffer = io.StringIO()
-    sys_stdout = sys.stdout
-    sys.stdout = buffer
-
-    try:
-        # Model evaluation
-        test_loss, test_accuracy = model.evaluate(X_test, y_test)
-        print(f"Test Accuracy: {test_accuracy * 100:.2f}%")
-
-        y_pred = np.argmax(model.predict(X_test), axis=-1)
-        print("\nClassification Report:")
-        print(classification_report(y_test, y_pred, target_names=label_encoder.classes_))
-    finally:
-        # Reset stdout
-        sys.stdout = sys_stdout
-
-        # Get captured output
-        output = buffer.getvalue()
-
-        # Extract only the Classification Report part
-        if "Classification Report:" in output:
-            report = output.split("Classification Report:")[-1].strip()
-            content_to_write = "Classification Report:\n" + report
-        else:
-            content_to_write = "Classification Report: Not found in output."
-
-        # Write to file in UTF-8
-        with open(log_file_path, "w", encoding="utf-8") as f:
-            f.write(content_to_write)
-
-        # Also print it to the console
-        print(content_to_write)
+    y_pred = np.argmax(model.predict(X_test), axis=-1)
+    print("\nClassification Report:")
+    print(classification_report(y_test, y_pred, target_names=label_encoder.classes_))
 
 def create_model(pkl_file_name = None, model_filename = None, models_folder_path = "models"):
     features, labels = load_data_from_db()

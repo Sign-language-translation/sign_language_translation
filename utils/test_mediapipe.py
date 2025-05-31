@@ -7,7 +7,7 @@ from utils.trim_sign_language_dead_time import detect_motion_and_trim
 
 # Global configuration
 video_folder = "resources/sign_language_videos/"
-json_folder = "resources/motion_data/"
+json_folder = "resources/motion_data_old/"
 output_folder = "resources/generated_videos/"
 
 
@@ -78,11 +78,13 @@ def extract_motion_data(video_name, folder_name=video_folder):
     # Release resources
     cap.release()
     cv2.destroyAllWindows()
+
+    return output_data
     
     # Trim dead time using the modified detect_motion_and_trim
-    trimmed_data = detect_motion_and_trim(output_data)
-
-    return trimmed_data
+    # trimmed_data = detect_motion_and_trim(output_data)
+    #
+    # return trimmed_data
 
 def motion_data_to_json(frames_data, video_name, folder_name, log_folder_path=None):
     # Ensure log folder exists
@@ -272,7 +274,7 @@ def save_visualization_as_video(video_name):
 #     # visualize_as_stick_figure(video_name)
 
 
-def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data"):
+def create_original_motion_data(folder_name = "resources/sign_language_videos", output_folder_path = "resources/motion_data_old"):
     # Iterate through all files in the given folder
     for file_name in os.listdir(folder_name):
         # Check if the file is a video file (e.g., .mp4, .avi, etc.)
@@ -285,5 +287,5 @@ def create_original_motion_data(folder_name = "resources/sign_language_videos", 
             motion_data_to_json(trim_data, video_name, output_folder_path)
 
 if __name__ == "__main__":
-    create_original_motion_data()
+    create_original_motion_data("/Users/raananpevzner/try/sign_language_translation/resources/motion_data_old","/Users/raananpevzner/try/sign_language_translation/test_codes_and_files/single_word_videos/our_videos_NOT_TRAINED/test_lena")
 
