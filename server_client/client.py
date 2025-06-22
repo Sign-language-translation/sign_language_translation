@@ -23,6 +23,8 @@ def prepare_video_payload(video_path, seg):
     }
 
 def send_video_payload(payload):
+    start = time.time()
+
     try:
         s = socket.create_connection((SERVER_HOST, SERVER_PORT), timeout=CONNECT_TIMEOUT)
         s.settimeout(120)
@@ -61,15 +63,20 @@ def send_video_payload(payload):
             return
 
         results = json.loads(data.decode('utf-8'))
+        print(results)
         print("✅ Server Response:")
-        for i, r in enumerate(results):
+        for i, r in enumerate(results.get("predictions")):
+
             print(f"{i+1}. {r}")
+        end = time.time()
+        print(f"TIME: the time it took is {end - start} sec")
 
     except Exception as e:
         print(f"❌ Communication error: {e}")
     finally:
+
         s.close()
-        return results
+        return results.get("predictions")
 
 
 ##########

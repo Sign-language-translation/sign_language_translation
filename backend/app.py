@@ -92,7 +92,7 @@ def translate_sign_language(filename, file_path, mode='sentence'):
 #     try:
 #         # Get the text from the request
 #         data = request.get_json()
-#         print("📥 Received data:", data)
+#         print("ð¥ Received data:", data)
 #         text = data.get('text', '')
 #         print("✏️ Text to convert:", text)
 #
@@ -107,7 +107,7 @@ def translate_sign_language(filename, file_path, mode='sentence'):
 #
 #         # If video already exists, return it
 #         if os.path.exists(output_path):
-#             print(f"📦 Found existing video for: {text}")
+#             print(f"ð¦ Found existing video for: {text}")
 #             video_url = url_for('static',filename=f"generated_videos/{safe_filename}", _external=True)
 #             return jsonify({ "video_url": video_url })
 #
@@ -154,4 +154,5 @@ def translate_sign_language(filename, file_path, mode='sentence'):
 #         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    app.run(host='0.0.0.0', port=8888, debug=True)
+    # app.run(port=3000, debug=True)
