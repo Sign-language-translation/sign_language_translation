@@ -44,7 +44,7 @@ export default {
         this.errorMessage = null;
         this.resultVideoUrl = null;
 
-        const response = await fetch('http://localhost:3000/generate_video', {
+        const response = await fetch('http://localhost:8888/generate_video', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'

@@ -62,15 +62,14 @@ def send_video_payload(payload):
 
         results = json.loads(data.decode('utf-8'))
         print("✅ Server Response:")
-        for i, r in enumerate(results):
+        for i, r in enumerate(results.get("predictions")):
             print(f"{i+1}. {r}")
 
     except Exception as e:
         print(f"❌ Communication error: {e}")
     finally:
         s.close()
-        return results
-
+        return results.get("predictions")
 
 ##########
 

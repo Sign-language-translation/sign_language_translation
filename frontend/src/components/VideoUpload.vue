@@ -77,7 +77,7 @@
   
         try {
           // Replace with your backend API endpoint
-          const response = await fetch('http://localhost:8888/upload', {
+          const response = await fetch('http://127.0.0.1:8888/upload', {
             method: 'POST',
             body: formData,
           });
@@ -153,7 +153,7 @@
 
  .uploaded-video {
   width: 100%;
-  max-width: 500px;
+  max-width: 200px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);

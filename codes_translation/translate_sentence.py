@@ -259,7 +259,6 @@ def call_gpt(message, client, deployment):
 
 def consolidate_answers(answers, client, deployment):
     joined_answers = "\n".join(f"Answer {i + 1}: {', '.join(ans)}" for i, ans in enumerate(answers))
-
     # final_prompt = f"""
     # You are given 5 different GPT responses that each analyzed a sign language video. Your task is to consolidate them into a single final list of signed words.
     #
