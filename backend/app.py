@@ -1,10 +1,8 @@
-from flask import Flask, request, jsonify, send_file
-from flask_cors import CORS
+from flask import Flask, request, jsonify
 import sys
 import os
 import uuid
 from werkzeug.utils import secure_filename
-from moviepy.editor import VideoFileClip, concatenate_videoclips
 from flask import url_for
 from openai import AzureOpenAI
 import cv2
@@ -14,12 +12,11 @@ from flask_cors import CORS
 # Add the parent directory of the backend folder to the Python path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
-# from resources.test_mediapipe import extract_motion_data
-# from classification import load_label_mapping,classify_json_file
 from codes_translation.translate_sentence import translate_video_to_text
 from codes_translation.translate_single_word import classify_single_word
 
 AZURE_OPENAI_API_KEY = os.getenv('AZURE_OPENAI_API_KEY')
+
 app = Flask(__name__, static_folder='static')
 CORS(app)  # Enable CORS for all routes
 
@@ -28,10 +25,6 @@ os.makedirs(UPLOAD_FOLDER, exist_ok=True)  # Ensure the upload folder exists
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 TEMP_FOLDER_PATH_OF_JSONS = 'json_files'
-
-# Define the folder where the word videos are stored
-VIDEO_FOLDER = 'videos'  
-
 
 # Allowed file extensions
 ALLOWED_EXTENSIONS = {'mp4', 'avi', 'mov'}
@@ -45,7 +38,7 @@ def upload_file():
         return jsonify({"error": "No file uploaded"}), 400
 
     file = request.files['video']
-    mode = request.form.get('mode', 'sentence') 
+    mode = request.form.get('mode', 'sentence')
 
     if file and allowed_file(file.filename):
         filename = secure_filename(f"{uuid.uuid4()}_{file.filename}")
@@ -110,16 +103,24 @@ def convert_sentence_to_list_of_existing_words_using_gpt(sentence):
     "{sentence}"
 
     And a list of allowed Hebrew words with their English meanings:
+    And a list of allowed Hebrew words with their English meanings:
     hello: שלום, thanks: תודה, need: צריך, now: עכשיו, when: מתי, why: למה, appointment: תור,
     schedule: לקבוע, arrive: להגיע, station: תחנה, bus: אוטובוס, phone: טלפון, place: מקום,
     help: לעזור, name: שם, no: לא, go: ללכת, come: לבוא, I: אני, you: אתה, home: בית,
     ticket: כרטיס, later: אחר כך, doctor: רופא, idCard: תעודת זהות, ambulance: אמבולנס,
-    clinic: קופת חולים
+    clinic: קופת חולים, tomorrow: מחר, yesterday: אתמול, youreWelcome: בבקשה,
+    how: איך, can: יכול, time: שעה, 1: אחד, 2: שתיים, 3: שלוש, 4: ארבע,
+    5: חמש, 6: שש, 7: שבע, 8: שמונה, 9: תשע, 10: עשר,
+    11: אחת עשרה, 12: שתים עשרה, 13: שלוש עשרה, 14: ארבע עשרה,
+    15: חמש עשרה, 16: שש עשרה, 17: שבע עשרה, 18: שמונה עשרה,
+    19: תשע עשרה, 20: עשרים
 
     Your task is to:
     1. Extract the words from the sentence that match (or closely match) the Hebrew words in the list. 
        - Convert conjugated, inflected, or gendered forms to the base form in the list  
-         (e.g. 'צריכה' → 'צריך', 'ארצה' or 'רציתי' → 'רוצה')
+         (e.g. 'ארצה' will become 'אני רוצה'
+            'תרצה' will become 'אתה רוצה'
+            'צריכה' will become 'צריך')
        - Remove common prefixes such as 'ב', 'ל', 'כ', 'ש', 'ה'  
          (e.g. 'לתחנת' → 'תחנה', 'באוטובוס' → 'אוטובוס')
 
@@ -167,6 +168,14 @@ def generate_video():
         os.makedirs(output_folder, exist_ok=True)
         output_path = os.path.join(output_folder, safe_filename)
 
+        # safe_filename = text.strip().lower().replace(" ", "_") + ".mp4"
+        # base_dir = os.path.dirname(os.path.abspath(__file__))
+        # output_folder = os.path.join(base_dir, "static", "generated_videos")
+        # os.makedirs(output_folder, exist_ok=True)
+        # output_path = os.path.join(output_folder, safe_filename)
+
+
+
         # If video already exists, return it
         if os.path.exists(output_path):
             print(f"📦 Found existing video for: {text}")
@@ -179,8 +188,29 @@ def generate_video():
         video_paths = []
         missing_words = []
 
+        # for word in words:
+        #     # video_path = os.path.abspath(os.path.join(VIDEO_FOLDER, f"{word}.mp4"))
+        #
+        #     # Always resolve relative to the location of app.py
+        #     base_dir = os.path.dirname(os.path.abspath(__file__))
+        #     video_folder = os.path.join(base_dir, "videos")
+        #
+        #     # Now build the full path safely
+        #     video_path = os.path.join(video_folder, f"{word}.mp4")
+        #
+        #     print("video_path = " + video_path)
+        #     if os.path.exists(video_path):
+        #         video_paths.append(video_path)
+        #     else:
+        #         print(f"⚠️ Video for word '{word}' not found.")
+        #         missing_words.append(word)
+
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        video_folder = os.path.join(base_dir, "videos")
+
         for word in words:
-            video_path = os.path.join(VIDEO_FOLDER, f"{word}.mp4")
+            video_path = os.path.join(video_folder, f"{word}.mp4")
+            print("video_path = " + video_path)
             if os.path.exists(video_path):
                 video_paths.append(video_path)
             else:
@@ -257,4 +287,4 @@ def concatenate_videos(video_paths, output_path, fps=30):
 
 
 if __name__ == '__main__':
-    app.run(port=3000, debug=True)
+    app.run(debug=True, port=3000)
