@@ -38,7 +38,7 @@ jaxlib==0.4.38
 Jinja2==3.1.6
 jiter==0.10.0
 joblib==1.4.2
-keras==3.8.0
+keras==3.9.0
 kiwisolver==1.4.8
 libclang==18.1.1
 markdown==3.7
