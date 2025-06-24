@@ -77,8 +77,7 @@
   
         try {
           // Replace with your backend API endpoint
-        //   const response = await fetch('http://localhost:5000/api/translate', {
-            const response = await fetch('http://localhost:3000/upload', {
+          const response = await fetch('http://localhost:8888/upload', {
             method: 'POST',
             body: formData,
           });

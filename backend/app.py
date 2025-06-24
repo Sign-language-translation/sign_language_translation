@@ -287,4 +287,5 @@ def concatenate_videos(video_paths, output_path, fps=30):
 
 
 if __name__ == '__main__':
-    app.run(debug=True, port=3000)
+    # app.run(debug=True, port=3000)
+    app.run(host='0.0.0.0', port=8888, debug=True)
